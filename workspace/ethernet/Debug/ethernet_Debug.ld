@@ -6,7 +6,7 @@
  * Generated linker script file for RW612
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v24.12 [Build 148] [2025-01-10] on 17 feb. 2025 22:44:08
+ * MCUXpresso IDE v24.12 [Build 148] [2025-01-10] on 17 feb. 2025 23:18:35
  */
 
 INCLUDE "ethernet_Debug_library.ld"

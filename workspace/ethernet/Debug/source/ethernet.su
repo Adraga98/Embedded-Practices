@@ -1,0 +1,7 @@
+C:\repos\embedded_practices\workspace\ethernet\drivers/fsl_enet.h:1256:20:ENET_ActiveRead	16	static
+C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:200:24:PHY_Init	16	static
+C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:277:24:PHY_GetAutoNegotiationStatus	16	static
+C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:292:24:PHY_GetLinkStatus	16	static
+C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:309:24:PHY_GetLinkSpeedDuplex	24	static
+../source/ethernet.c:99:13:ENET_BuildBroadCastFrame	16	static
+../source/ethernet.c:130:5:main	224	static

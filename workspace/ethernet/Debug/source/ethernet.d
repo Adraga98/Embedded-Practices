@@ -1,5 +1,4 @@
-source/enet_txrx_transfer.o source/enet_txrx_transfer.d: \
- ../source/enet_txrx_transfer.c \
+source/ethernet.o source/ethernet.d: ../source/ethernet.c \
  C:\repos\embedded_practices\workspace\ethernet\source\mcux_config.h \
  C:\repos\embedded_practices\workspace\ethernet\utilities\debug_console_lite/fsl_debug_console.h \
  C:\repos\embedded_practices\workspace\ethernet\drivers/fsl_common.h \

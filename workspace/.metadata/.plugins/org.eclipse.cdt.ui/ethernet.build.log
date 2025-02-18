@@ -1,4 +1,4 @@
-22:44:08 **** Incremental Build of configuration Debug for project ethernet ****
+23:18:35 **** Incremental Build of configuration Debug for project ethernet ****
 make -r -j8 all 
 make[1]: Nothing to be done for 'main-build'.
 Performing post-build steps
@@ -7,5 +7,5 @@ arm-none-eabi-size "ethernet.axf"; # arm-none-eabi-objcopy -v -O binary "etherne
   47200	      0	  22404	  69604	  10fe4	ethernet.axf
  
 
-22:44:09 Build Finished. 0 errors, 0 warnings. (took 392ms)
+23:18:35 Build Finished. 0 errors, 0 warnings. (took 312ms)
 

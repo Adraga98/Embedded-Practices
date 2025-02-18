@@ -4805,3 +4805,9 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-17 22:44:13.359
 !MESSAGE Telnet session connected on port 2333->54838 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-17 23:18:39.099
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-17 23:18:39.760
+!MESSAGE Telnet session connected on port 2333->56243 @ 127.0.0.1

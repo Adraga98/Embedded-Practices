@@ -5,7 +5,7 @@ C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.
 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(memset.o)
                               ./drivers/fsl_cache.o (memset)
 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(alloc.o)
-                              ./source/enet_txrx_transfer.o (malloc)
+                              ./source/ethernet.o (malloc)
 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(errno.o)
                               ./utilities/str/fsl_str.o (errno)
 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(initio.o)
@@ -760,210 +760,210 @@ Discarded input sections
  .bss           0x00000000        0x0 ./startup/startup_rw612.o
  .debug_macro   0x00000000      0xb32 ./startup/startup_rw612.o
  .debug_macro   0x00000000       0x1c ./startup/startup_rw612.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .group         0x00000000        0xc ./source/enet_txrx_transfer.o
- .text          0x00000000        0x0 ./source/enet_txrx_transfer.o
- .data          0x00000000        0x0 ./source/enet_txrx_transfer.o
- .bss           0x00000000        0x0 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0xb32 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x1c ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x10 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x1c ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x22 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x12e ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x5b3 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x22 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x46 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x2e ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x18 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x26 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0xc2 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x28 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x16bd ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x130 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x2e ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x493 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0xaa7 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x819 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x883 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x275c ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x5b3 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x55c3 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x44 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0xd00 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x2aa ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x26b ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x1bb ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x6b ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x50b ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x326 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x212e ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x1d7d ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0xd15 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x835 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0xa7 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x52f ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x431 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0xbf ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x235c ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x335 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x349f ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0xfdc ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0xd6 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x1a95 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x80 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x301 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x209c ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x6f4 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x71e ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x1793 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x95e ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x696 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x94a ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x18c ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x2776 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0xc1 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x2fb ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x61c ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x16ed ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x422 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0xa21 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x15c ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x29c ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x6aa ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x4c7 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x170 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x1796 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0xfd ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x757 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x1cff ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x767 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x294d ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x4cc ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x868 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x449 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x12b ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x22a8 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x2aa ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x1ac ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x1ac ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x63e ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0xa4b ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x4886 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x5af ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x184 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000     0x1423 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0xea ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x88 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0xd9 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x16 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0xa5 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000      0x183 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x16 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x1c ./source/enet_txrx_transfer.o
- .debug_macro   0x00000000       0x2e ./source/enet_txrx_transfer.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .group         0x00000000        0xc ./source/ethernet.o
+ .text          0x00000000        0x0 ./source/ethernet.o
+ .data          0x00000000        0x0 ./source/ethernet.o
+ .bss           0x00000000        0x0 ./source/ethernet.o
+ .debug_macro   0x00000000      0xb32 ./source/ethernet.o
+ .debug_macro   0x00000000       0x1c ./source/ethernet.o
+ .debug_macro   0x00000000       0x10 ./source/ethernet.o
+ .debug_macro   0x00000000       0x1c ./source/ethernet.o
+ .debug_macro   0x00000000       0x22 ./source/ethernet.o
+ .debug_macro   0x00000000      0x12e ./source/ethernet.o
+ .debug_macro   0x00000000      0x5b3 ./source/ethernet.o
+ .debug_macro   0x00000000       0x22 ./source/ethernet.o
+ .debug_macro   0x00000000       0x46 ./source/ethernet.o
+ .debug_macro   0x00000000       0x2e ./source/ethernet.o
+ .debug_macro   0x00000000       0x18 ./source/ethernet.o
+ .debug_macro   0x00000000       0x26 ./source/ethernet.o
+ .debug_macro   0x00000000       0xc2 ./source/ethernet.o
+ .debug_macro   0x00000000       0x28 ./source/ethernet.o
+ .debug_macro   0x00000000     0x16bd ./source/ethernet.o
+ .debug_macro   0x00000000      0x130 ./source/ethernet.o
+ .debug_macro   0x00000000       0x2e ./source/ethernet.o
+ .debug_macro   0x00000000      0x493 ./source/ethernet.o
+ .debug_macro   0x00000000      0xaa7 ./source/ethernet.o
+ .debug_macro   0x00000000      0x819 ./source/ethernet.o
+ .debug_macro   0x00000000      0x883 ./source/ethernet.o
+ .debug_macro   0x00000000     0x275c ./source/ethernet.o
+ .debug_macro   0x00000000      0x5b3 ./source/ethernet.o
+ .debug_macro   0x00000000     0x55c3 ./source/ethernet.o
+ .debug_macro   0x00000000       0x44 ./source/ethernet.o
+ .debug_macro   0x00000000      0xd00 ./source/ethernet.o
+ .debug_macro   0x00000000      0x2aa ./source/ethernet.o
+ .debug_macro   0x00000000      0x26b ./source/ethernet.o
+ .debug_macro   0x00000000      0x1bb ./source/ethernet.o
+ .debug_macro   0x00000000       0x6b ./source/ethernet.o
+ .debug_macro   0x00000000      0x50b ./source/ethernet.o
+ .debug_macro   0x00000000      0x326 ./source/ethernet.o
+ .debug_macro   0x00000000     0x212e ./source/ethernet.o
+ .debug_macro   0x00000000     0x1d7d ./source/ethernet.o
+ .debug_macro   0x00000000      0xd15 ./source/ethernet.o
+ .debug_macro   0x00000000      0x835 ./source/ethernet.o
+ .debug_macro   0x00000000       0xa7 ./source/ethernet.o
+ .debug_macro   0x00000000      0x52f ./source/ethernet.o
+ .debug_macro   0x00000000      0x431 ./source/ethernet.o
+ .debug_macro   0x00000000       0xbf ./source/ethernet.o
+ .debug_macro   0x00000000     0x235c ./source/ethernet.o
+ .debug_macro   0x00000000      0x335 ./source/ethernet.o
+ .debug_macro   0x00000000     0x349f ./source/ethernet.o
+ .debug_macro   0x00000000      0xfdc ./source/ethernet.o
+ .debug_macro   0x00000000       0xd6 ./source/ethernet.o
+ .debug_macro   0x00000000     0x1a95 ./source/ethernet.o
+ .debug_macro   0x00000000       0x80 ./source/ethernet.o
+ .debug_macro   0x00000000      0x301 ./source/ethernet.o
+ .debug_macro   0x00000000     0x209c ./source/ethernet.o
+ .debug_macro   0x00000000      0x6f4 ./source/ethernet.o
+ .debug_macro   0x00000000      0x71e ./source/ethernet.o
+ .debug_macro   0x00000000     0x1793 ./source/ethernet.o
+ .debug_macro   0x00000000      0x95e ./source/ethernet.o
+ .debug_macro   0x00000000      0x696 ./source/ethernet.o
+ .debug_macro   0x00000000      0x94a ./source/ethernet.o
+ .debug_macro   0x00000000      0x18c ./source/ethernet.o
+ .debug_macro   0x00000000     0x2776 ./source/ethernet.o
+ .debug_macro   0x00000000       0xc1 ./source/ethernet.o
+ .debug_macro   0x00000000      0x2fb ./source/ethernet.o
+ .debug_macro   0x00000000      0x61c ./source/ethernet.o
+ .debug_macro   0x00000000     0x16ed ./source/ethernet.o
+ .debug_macro   0x00000000      0x422 ./source/ethernet.o
+ .debug_macro   0x00000000      0xa21 ./source/ethernet.o
+ .debug_macro   0x00000000      0x15c ./source/ethernet.o
+ .debug_macro   0x00000000      0x29c ./source/ethernet.o
+ .debug_macro   0x00000000      0x6aa ./source/ethernet.o
+ .debug_macro   0x00000000      0x4c7 ./source/ethernet.o
+ .debug_macro   0x00000000      0x170 ./source/ethernet.o
+ .debug_macro   0x00000000     0x1796 ./source/ethernet.o
+ .debug_macro   0x00000000       0xfd ./source/ethernet.o
+ .debug_macro   0x00000000      0x757 ./source/ethernet.o
+ .debug_macro   0x00000000     0x1cff ./source/ethernet.o
+ .debug_macro   0x00000000      0x767 ./source/ethernet.o
+ .debug_macro   0x00000000     0x294d ./source/ethernet.o
+ .debug_macro   0x00000000      0x4cc ./source/ethernet.o
+ .debug_macro   0x00000000      0x868 ./source/ethernet.o
+ .debug_macro   0x00000000      0x449 ./source/ethernet.o
+ .debug_macro   0x00000000      0x12b ./source/ethernet.o
+ .debug_macro   0x00000000     0x22a8 ./source/ethernet.o
+ .debug_macro   0x00000000      0x2aa ./source/ethernet.o
+ .debug_macro   0x00000000      0x1ac ./source/ethernet.o
+ .debug_macro   0x00000000      0x1ac ./source/ethernet.o
+ .debug_macro   0x00000000      0x63e ./source/ethernet.o
+ .debug_macro   0x00000000      0xa4b ./source/ethernet.o
+ .debug_macro   0x00000000     0x4886 ./source/ethernet.o
+ .debug_macro   0x00000000      0x5af ./source/ethernet.o
+ .debug_macro   0x00000000      0x184 ./source/ethernet.o
+ .debug_macro   0x00000000     0x1423 ./source/ethernet.o
+ .debug_macro   0x00000000       0xea ./source/ethernet.o
+ .debug_macro   0x00000000       0x88 ./source/ethernet.o
+ .debug_macro   0x00000000       0xd9 ./source/ethernet.o
+ .debug_macro   0x00000000       0x16 ./source/ethernet.o
+ .debug_macro   0x00000000       0xa5 ./source/ethernet.o
+ .debug_macro   0x00000000      0x183 ./source/ethernet.o
+ .debug_macro   0x00000000       0x16 ./source/ethernet.o
+ .debug_macro   0x00000000       0x1c ./source/ethernet.o
+ .debug_macro   0x00000000       0x2e ./source/ethernet.o
  .group         0x00000000        0xc ./source/semihost_hardfault.o
  .group         0x00000000        0xc ./source/semihost_hardfault.o
  .text          0x00000000        0x0 ./source/semihost_hardfault.o
@@ -7554,7 +7554,7 @@ LOAD ./utilities/debug_console_lite/fsl_debug_console.o
 LOAD ./utilities/fsl_assert.o
 LOAD ./utilities/fsl_memcpy.o
 LOAD ./startup/startup_rw612.o
-LOAD ./source/enet_txrx_transfer.o
+LOAD ./source/ethernet.o
 LOAD ./source/semihost_hardfault.o
 LOAD ./flash_config/flash_config.o
 LOAD ./drivers/fsl_cache.o
@@ -7794,8 +7794,8 @@ END GROUP
  .text          0x08001e14       0xa0 ./utilities/fsl_memcpy.o
                 0x08001e14                memcpy
  .text.ENET_BuildBroadCastFrame
-                0x08001eb4       0x94 ./source/enet_txrx_transfer.o
- .text.main     0x08001f48      0x344 ./source/enet_txrx_transfer.o
+                0x08001eb4       0x94 ./source/ethernet.o
+ .text.main     0x08001f48      0x344 ./source/ethernet.o
                 0x08001f48                main
  .text.CLOCK_GetSysOscFreq
                 0x0800228c       0x54 ./drivers/fsl_clock.o
@@ -8588,15 +8588,15 @@ END GROUP
                 0x0800862e        0x8 ./startup/startup_rw612.o
                 0x0800862e                GDMA_IRQHandler
  .text.ENET_ActiveRead
-                0x08008636       0x1c ./source/enet_txrx_transfer.o
+                0x08008636       0x1c ./source/ethernet.o
  .text.PHY_Init
-                0x08008652       0x28 ./source/enet_txrx_transfer.o
+                0x08008652       0x28 ./source/ethernet.o
  .text.PHY_GetAutoNegotiationStatus
-                0x0800867a       0x20 ./source/enet_txrx_transfer.o
+                0x0800867a       0x20 ./source/ethernet.o
  .text.PHY_GetLinkStatus
-                0x0800869a       0x20 ./source/enet_txrx_transfer.o
+                0x0800869a       0x20 ./source/ethernet.o
  .text.PHY_GetLinkSpeedDuplex
-                0x080086ba       0x24 ./source/enet_txrx_transfer.o
+                0x080086ba       0x24 ./source/ethernet.o
  .text.HardFault_Handler
                 0x080086de       0x36 ./source/semihost_hardfault.o
                 0x080086de                HardFault_Handler
@@ -8781,9 +8781,9 @@ END GROUP
                 0x08009630     0x14c1 ./utilities/fsl_assert.o
                                  0x14 (size before relaxing)
  .rodata.main.str1.4
-                0x0800aaf1      0x190 ./source/enet_txrx_transfer.o
+                0x0800aaf1      0x190 ./source/ethernet.o
  *fill*         0x0800aaf1        0x3 ff
- .rodata        0x0800aaf4       0x20 ./source/enet_txrx_transfer.o
+ .rodata        0x0800aaf4       0x20 ./source/ethernet.o
  .rodata.s_avpllFreq
                 0x0800ab14       0x2c ./drivers/fsl_clock.o
  .rodata.s_avpllFreqOff
@@ -9024,7 +9024,7 @@ END GROUP
  *(SORT_BY_ALIGNMENT(RamFunction))
  *(SORT_BY_ALIGNMENT(.data*))
  .data.g_macAddr
-                0x20000bb8        0x6 ./source/enet_txrx_transfer.o
+                0x20000bb8        0x6 ./source/ethernet.o
                 0x20000bb8                g_macAddr
  *fill*         0x20000bbe        0x2 ff
  .data.SystemCoreClock
@@ -9044,26 +9044,26 @@ END GROUP
                 [!provide]                        PROVIDE (__start_bss_SRAM = .)
  *(SORT_BY_ALIGNMENT(.bss*))
  .bss.g_rxBuffDescrip
-                0x20000c00       0x20 ./source/enet_txrx_transfer.o
+                0x20000c00       0x20 ./source/ethernet.o
                 0x20000c00                g_rxBuffDescrip
  *fill*         0x20000c20       0x20 
  .bss.g_txBuffDescrip
-                0x20000c40       0x20 ./source/enet_txrx_transfer.o
+                0x20000c40       0x20 ./source/ethernet.o
                 0x20000c40                g_txBuffDescrip
  *fill*         0x20000c60       0x20 
  .bss.g_rxDataBuff
-                0x20000c80     0x1800 ./source/enet_txrx_transfer.o
+                0x20000c80     0x1800 ./source/ethernet.o
                 0x20000c80                g_rxDataBuff
  .bss.g_txDataBuff
-                0x20002480     0x1800 ./source/enet_txrx_transfer.o
+                0x20002480     0x1800 ./source/ethernet.o
                 0x20002480                g_txDataBuff
  .bss.s_debugConsole
                 0x20003c80       0x14 ./utilities/debug_console_lite/fsl_debug_console.o
- .bss.g_handle  0x20003c94       0x7c ./source/enet_txrx_transfer.o
- .bss.g_frame   0x20003d10      0x3f6 ./source/enet_txrx_transfer.o
+ .bss.g_handle  0x20003c94       0x7c ./source/ethernet.o
+ .bss.g_frame   0x20003d10      0x3f6 ./source/ethernet.o
  *fill*         0x20004106        0x2 
  .bss.phyHandle
-                0x20004108        0xc ./source/enet_txrx_transfer.o
+                0x20004108        0xc ./source/ethernet.o
  .bss.g_clkinFreq
                 0x20004114        0x4 ./drivers/fsl_clock.o
                 0x20004114                g_clkinFreq
@@ -9172,7 +9172,7 @@ LOAD linker stubs
  .debug_info    0x00000d8d      0x12e ./utilities/fsl_assert.o
  .debug_info    0x00000ebb       0x24 ./utilities/fsl_memcpy.o
  .debug_info    0x00000edf     0x11bf ./startup/startup_rw612.o
- .debug_info    0x0000209e     0x1c2b ./source/enet_txrx_transfer.o
+ .debug_info    0x0000209e     0x1c2b ./source/ethernet.o
  .debug_info    0x00003cc9       0x3c ./source/semihost_hardfault.o
  .debug_info    0x00003d05      0x815 ./flash_config/flash_config.o
  .debug_info    0x0000451a     0x3524 ./drivers/fsl_clock.o
@@ -9228,7 +9228,7 @@ LOAD linker stubs
  .debug_abbrev  0x0000023a       0xbd ./utilities/fsl_assert.o
  .debug_abbrev  0x000002f7       0x14 ./utilities/fsl_memcpy.o
  .debug_abbrev  0x0000030b      0x15f ./startup/startup_rw612.o
- .debug_abbrev  0x0000046a      0x314 ./source/enet_txrx_transfer.o
+ .debug_abbrev  0x0000046a      0x314 ./source/ethernet.o
  .debug_abbrev  0x0000077e       0x31 ./source/semihost_hardfault.o
  .debug_abbrev  0x000007af       0xf3 ./flash_config/flash_config.o
  .debug_abbrev  0x000008a2      0x454 ./drivers/fsl_clock.o
@@ -9289,7 +9289,7 @@ LOAD linker stubs
  .debug_aranges
                 0x000000c0      0x490 ./startup/startup_rw612.o
  .debug_aranges
-                0x00000550       0x50 ./source/enet_txrx_transfer.o
+                0x00000550       0x50 ./source/ethernet.o
  .debug_aranges
                 0x000005a0       0x20 ./source/semihost_hardfault.o
  .debug_aranges
@@ -9393,7 +9393,7 @@ LOAD linker stubs
  .debug_ranges  0x00000000       0x68 ./utilities/debug_console_lite/fsl_debug_console.o
  .debug_ranges  0x00000068       0x18 ./utilities/fsl_assert.o
  .debug_ranges  0x00000080      0x480 ./startup/startup_rw612.o
- .debug_ranges  0x00000500       0x40 ./source/enet_txrx_transfer.o
+ .debug_ranges  0x00000500       0x40 ./source/ethernet.o
  .debug_ranges  0x00000540       0x10 ./source/semihost_hardfault.o
  .debug_ranges  0x00000550      0x218 ./drivers/fsl_clock.o
  .debug_ranges  0x00000768       0x28 ./drivers/fsl_common_arm.o
@@ -9454,14 +9454,14 @@ LOAD linker stubs
  .debug_macro   0x000009c5       0x22 ./utilities/fsl_assert.o
  .debug_macro   0x000009e7       0x1c ./utilities/fsl_assert.o
  .debug_macro   0x00000a03       0x32 ./startup/startup_rw612.o
- .debug_macro   0x00000a35      0x4b0 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000ee5       0x10 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000ef5       0x34 ./source/enet_txrx_transfer.o
- .debug_macro   0x00000f29       0xcb ./source/enet_txrx_transfer.o
- .debug_macro   0x00000ff4      0x11e ./source/enet_txrx_transfer.o
- .debug_macro   0x00001112       0x28 ./source/enet_txrx_transfer.o
- .debug_macro   0x0000113a      0x106 ./source/enet_txrx_transfer.o
- .debug_macro   0x00001240       0x22 ./source/enet_txrx_transfer.o
+ .debug_macro   0x00000a35      0x4b0 ./source/ethernet.o
+ .debug_macro   0x00000ee5       0x10 ./source/ethernet.o
+ .debug_macro   0x00000ef5       0x34 ./source/ethernet.o
+ .debug_macro   0x00000f29       0xcb ./source/ethernet.o
+ .debug_macro   0x00000ff4      0x11e ./source/ethernet.o
+ .debug_macro   0x00001112       0x28 ./source/ethernet.o
+ .debug_macro   0x0000113a      0x106 ./source/ethernet.o
+ .debug_macro   0x00001240       0x22 ./source/ethernet.o
  .debug_macro   0x00001262       0x1a ./source/semihost_hardfault.o
  .debug_macro   0x0000127c      0x401 ./flash_config/flash_config.o
  .debug_macro   0x0000167d       0xdc ./flash_config/flash_config.o
@@ -9523,125 +9523,125 @@ LOAD linker stubs
  .debug_macro   0x000124a4      0x2a1 ./board/hardware_init.o
  .debug_macro   0x00012745      0x402 ./board/pin_mux.o
 
-.debug_line     0x00000000    0x1937e
+.debug_line     0x00000000    0x19374
  .debug_line    0x00000000     0x1136 ./utilities/debug_console_lite/fsl_debug_console.o
  .debug_line    0x00001136      0x9fe ./utilities/fsl_assert.o
  .debug_line    0x00001b34       0x89 ./utilities/fsl_memcpy.o
  .debug_line    0x00001bbd      0xe8a ./startup/startup_rw612.o
- .debug_line    0x00002a47      0xd04 ./source/enet_txrx_transfer.o
- .debug_line    0x0000374b       0xa0 ./source/semihost_hardfault.o
- .debug_line    0x000037eb      0x95b ./flash_config/flash_config.o
- .debug_line    0x00004146     0x1b98 ./drivers/fsl_clock.o
- .debug_line    0x00005cde      0x9b0 ./drivers/fsl_common_arm.o
- .debug_line    0x0000668e     0x22d9 ./drivers/fsl_enet.o
- .debug_line    0x00008967      0xb0e ./drivers/fsl_flexcomm.o
- .debug_line    0x00009475     0x1612 ./drivers/fsl_flexspi.o
- .debug_line    0x0000aa87      0xb54 ./drivers/fsl_gpio.o
- .debug_line    0x0000b5db      0xc19 ./drivers/fsl_ocotp.o
- .debug_line    0x0000c1f4     0x19fa ./drivers/fsl_power.o
- .debug_line    0x0000dbee      0xb0c ./drivers/fsl_reset.o
- .debug_line    0x0000e6fa     0x16f1 ./drivers/fsl_usart.o
- .debug_line    0x0000fdeb      0xb5a ./device/system_RW612.o
- .debug_line    0x00010945      0xb54 ./component/uart/fsl_adapter_usart.o
- .debug_line    0x00011499      0xc05 ./component/phy/fsl_phyksz8081.o
- .debug_line    0x0001209e     0x1366 ./component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_Common.o
- .debug_line    0x00013404     0x10bc ./component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_GlitchDetector.o
- .debug_line    0x000144c0     0x1416 ./board/board.o
- .debug_line    0x000158d6      0xa0b ./board/clock_config.o
- .debug_line    0x000162e1      0xab4 ./board/hardware_init.o
- .debug_line    0x00016d95      0xb7b ./board/pin_mux.o
- .debug_line    0x00017910       0xc4 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(_cr__main.o)
- .debug_line    0x000179d4       0x7b C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(memset.o)
- .debug_line    0x00017a4f      0x37d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(alloc.o)
- .debug_line    0x00017dcc       0x4e C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(errno.o)
- .debug_line    0x00017e1a      0x149 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(initio.o)
- .debug_line    0x00017f63       0xec C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(setvbuf.o)
- .debug_line    0x0001804f      0x109 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(strlen.o)
- .debug_line    0x00018158       0x59 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(__init_alloc.o)
- .debug_line    0x000181b1       0xfb C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_cr_sbrk.o)
- .debug_line    0x000182ac      0x2e9 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_deferredlazyseek.o)
- .debug_line    0x00018595      0x11c C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_fdopen.o)
- .debug_line    0x000186b1      0x11f C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_fflush.o)
- .debug_line    0x000187d0      0x12d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_writebuf.o)
- .debug_line    0x000188fd      0x10f C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fclose.o)
- .debug_line    0x00018a0c       0xe1 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fflush.o)
- .debug_line    0x00018aed      0x232 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fseek.o)
- .debug_line    0x00018d1f      0x10a C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(ftell.o)
- .debug_line    0x00018e29       0xec C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(remove.o)
- .debug_line    0x00018f15       0x61 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_cr_check_heap.o)
- .debug_line    0x00018f76       0xfc C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_do_fflush.o)
- .debug_line    0x00019072       0xea C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__ciob.o)
- .debug_line    0x0001915c       0x4e C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_close.o)
- .debug_line    0x000191aa       0x4d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_flen.o)
- .debug_line    0x000191f7       0x4e C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_istty.o)
- .debug_line    0x00019245       0x4f C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_remove.o)
- .debug_line    0x00019294       0x4d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_seek.o)
- .debug_line    0x000192e1       0x4f C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_tmpnam.o)
- .debug_line    0x00019330       0x4e C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_write.o)
+ .debug_line    0x00002a47      0xcfa ./source/ethernet.o
+ .debug_line    0x00003741       0xa0 ./source/semihost_hardfault.o
+ .debug_line    0x000037e1      0x95b ./flash_config/flash_config.o
+ .debug_line    0x0000413c     0x1b98 ./drivers/fsl_clock.o
+ .debug_line    0x00005cd4      0x9b0 ./drivers/fsl_common_arm.o
+ .debug_line    0x00006684     0x22d9 ./drivers/fsl_enet.o
+ .debug_line    0x0000895d      0xb0e ./drivers/fsl_flexcomm.o
+ .debug_line    0x0000946b     0x1612 ./drivers/fsl_flexspi.o
+ .debug_line    0x0000aa7d      0xb54 ./drivers/fsl_gpio.o
+ .debug_line    0x0000b5d1      0xc19 ./drivers/fsl_ocotp.o
+ .debug_line    0x0000c1ea     0x19fa ./drivers/fsl_power.o
+ .debug_line    0x0000dbe4      0xb0c ./drivers/fsl_reset.o
+ .debug_line    0x0000e6f0     0x16f1 ./drivers/fsl_usart.o
+ .debug_line    0x0000fde1      0xb5a ./device/system_RW612.o
+ .debug_line    0x0001093b      0xb54 ./component/uart/fsl_adapter_usart.o
+ .debug_line    0x0001148f      0xc05 ./component/phy/fsl_phyksz8081.o
+ .debug_line    0x00012094     0x1366 ./component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_Common.o
+ .debug_line    0x000133fa     0x10bc ./component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_GlitchDetector.o
+ .debug_line    0x000144b6     0x1416 ./board/board.o
+ .debug_line    0x000158cc      0xa0b ./board/clock_config.o
+ .debug_line    0x000162d7      0xab4 ./board/hardware_init.o
+ .debug_line    0x00016d8b      0xb7b ./board/pin_mux.o
+ .debug_line    0x00017906       0xc4 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(_cr__main.o)
+ .debug_line    0x000179ca       0x7b C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(memset.o)
+ .debug_line    0x00017a45      0x37d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(alloc.o)
+ .debug_line    0x00017dc2       0x4e C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(errno.o)
+ .debug_line    0x00017e10      0x149 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(initio.o)
+ .debug_line    0x00017f59       0xec C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(setvbuf.o)
+ .debug_line    0x00018045      0x109 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(strlen.o)
+ .debug_line    0x0001814e       0x59 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(__init_alloc.o)
+ .debug_line    0x000181a7       0xfb C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_cr_sbrk.o)
+ .debug_line    0x000182a2      0x2e9 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_deferredlazyseek.o)
+ .debug_line    0x0001858b      0x11c C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_fdopen.o)
+ .debug_line    0x000186a7      0x11f C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_fflush.o)
+ .debug_line    0x000187c6      0x12d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_writebuf.o)
+ .debug_line    0x000188f3      0x10f C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fclose.o)
+ .debug_line    0x00018a02       0xe1 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fflush.o)
+ .debug_line    0x00018ae3      0x232 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fseek.o)
+ .debug_line    0x00018d15      0x10a C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(ftell.o)
+ .debug_line    0x00018e1f       0xec C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(remove.o)
+ .debug_line    0x00018f0b       0x61 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_cr_check_heap.o)
+ .debug_line    0x00018f6c       0xfc C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_do_fflush.o)
+ .debug_line    0x00019068       0xea C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__ciob.o)
+ .debug_line    0x00019152       0x4e C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_close.o)
+ .debug_line    0x000191a0       0x4d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_flen.o)
+ .debug_line    0x000191ed       0x4e C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_istty.o)
+ .debug_line    0x0001923b       0x4f C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_remove.o)
+ .debug_line    0x0001928a       0x4d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_seek.o)
+ .debug_line    0x000192d7       0x4f C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_tmpnam.o)
+ .debug_line    0x00019326       0x4e C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_write.o)
 
-.debug_str      0x00000000   0x30fb51
- .debug_str     0x00000000   0x30fb51 ./utilities/debug_console_lite/fsl_debug_console.o
+.debug_str      0x00000000   0x30fb47
+ .debug_str     0x00000000   0x30fb47 ./utilities/debug_console_lite/fsl_debug_console.o
                              0x28c737 (size before relaxing)
- .debug_str     0x0030fb51   0x28ae39 ./utilities/fsl_assert.o
- .debug_str     0x0030fb51       0x5d ./utilities/fsl_memcpy.o
- .debug_str     0x0030fb51     0x3d5f ./startup/startup_rw612.o
- .debug_str     0x0030fb51   0x28e486 ./source/enet_txrx_transfer.o
- .debug_str     0x0030fb51     0x3067 ./source/semihost_hardfault.o
- .debug_str     0x0030fb51   0x28be9f ./flash_config/flash_config.o
- .debug_str     0x0030fb51   0x28ed67 ./drivers/fsl_clock.o
- .debug_str     0x0030fb51   0x28ae41 ./drivers/fsl_common_arm.o
- .debug_str     0x0030fb51   0x28eeef ./drivers/fsl_enet.o
- .debug_str     0x0030fb51   0x28cac4 ./drivers/fsl_flexcomm.o
- .debug_str     0x0030fb51   0x28dcfa ./drivers/fsl_flexspi.o
- .debug_str     0x0030fb51   0x28c33c ./drivers/fsl_gpio.o
- .debug_str     0x0030fb51   0x28c2fe ./drivers/fsl_ocotp.o
- .debug_str     0x0030fb51   0x28fad7 ./drivers/fsl_power.o
- .debug_str     0x0030fb51   0x28b1ea ./drivers/fsl_reset.o
- .debug_str     0x0030fb51   0x28d19b ./drivers/fsl_usart.o
- .debug_str     0x0030fb51   0x2897c8 ./device/system_RW612.o
- .debug_str     0x0030fb51   0x28c3b5 ./component/uart/fsl_adapter_usart.o
- .debug_str     0x0030fb51   0x28c5f6 ./component/phy/fsl_phyksz8081.o
- .debug_str     0x0030fb51   0x2eeb51 ./component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_Common.o
- .debug_str     0x0030fb51   0x2ee666 ./component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_GlitchDetector.o
- .debug_str     0x0030fb51   0x2ff0e6 ./board/board.o
- .debug_str     0x0030fb51   0x28ea7c ./board/clock_config.o
- .debug_str     0x0030fb51   0x28ea49 ./board/hardware_init.o
- .debug_str     0x0030fb51   0x297bc8 ./board/pin_mux.o
- .debug_str     0x0030fb51      0x199 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(_cr__main.o)
- .debug_str     0x0030fb51      0x1b0 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(memset.o)
- .debug_str     0x0030fb51      0x263 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(alloc.o)
- .debug_str     0x0030fb51      0x144 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(errno.o)
- .debug_str     0x0030fb51      0x26d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(initio.o)
- .debug_str     0x0030fb51      0x263 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(setvbuf.o)
- .debug_str     0x0030fb51      0x1aa C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(strlen.o)
- .debug_str     0x0030fb51      0x1af C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(__init_alloc.o)
- .debug_str     0x0030fb51      0x1f1 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_cr_sbrk.o)
- .debug_str     0x0030fb51      0x2a7 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_deferredlazyseek.o)
- .debug_str     0x0030fb51      0x260 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_fdopen.o)
- .debug_str     0x0030fb51      0x242 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_fflush.o)
- .debug_str     0x0030fb51      0x273 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_writebuf.o)
- .debug_str     0x0030fb51      0x277 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fclose.o)
- .debug_str     0x0030fb51      0x265 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fflush.o)
- .debug_str     0x0030fb51      0x267 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fseek.o)
- .debug_str     0x0030fb51      0x244 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(ftell.o)
- .debug_str     0x0030fb51      0x203 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(remove.o)
- .debug_str     0x0030fb51      0x1a3 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_cr_check_heap.o)
- .debug_str     0x0030fb51      0x258 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_do_fflush.o)
- .debug_str     0x0030fb51      0x231 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__ciob.o)
- .debug_str     0x0030fb51      0x18a C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_close.o)
- .debug_str     0x0030fb51      0x183 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_flen.o)
- .debug_str     0x0030fb51      0x185 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_istty.o)
- .debug_str     0x0030fb51      0x190 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_remove.o)
- .debug_str     0x0030fb51      0x183 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_seek.o)
- .debug_str     0x0030fb51      0x19d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_tmpnam.o)
- .debug_str     0x0030fb51      0x1a0 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_write.o)
+ .debug_str     0x0030fb47   0x28ae39 ./utilities/fsl_assert.o
+ .debug_str     0x0030fb47       0x5d ./utilities/fsl_memcpy.o
+ .debug_str     0x0030fb47     0x3d5f ./startup/startup_rw612.o
+ .debug_str     0x0030fb47   0x28e47c ./source/ethernet.o
+ .debug_str     0x0030fb47     0x3067 ./source/semihost_hardfault.o
+ .debug_str     0x0030fb47   0x28be9f ./flash_config/flash_config.o
+ .debug_str     0x0030fb47   0x28ed67 ./drivers/fsl_clock.o
+ .debug_str     0x0030fb47   0x28ae41 ./drivers/fsl_common_arm.o
+ .debug_str     0x0030fb47   0x28eeef ./drivers/fsl_enet.o
+ .debug_str     0x0030fb47   0x28cac4 ./drivers/fsl_flexcomm.o
+ .debug_str     0x0030fb47   0x28dcfa ./drivers/fsl_flexspi.o
+ .debug_str     0x0030fb47   0x28c33c ./drivers/fsl_gpio.o
+ .debug_str     0x0030fb47   0x28c2fe ./drivers/fsl_ocotp.o
+ .debug_str     0x0030fb47   0x28fad7 ./drivers/fsl_power.o
+ .debug_str     0x0030fb47   0x28b1ea ./drivers/fsl_reset.o
+ .debug_str     0x0030fb47   0x28d19b ./drivers/fsl_usart.o
+ .debug_str     0x0030fb47   0x2897c8 ./device/system_RW612.o
+ .debug_str     0x0030fb47   0x28c3b5 ./component/uart/fsl_adapter_usart.o
+ .debug_str     0x0030fb47   0x28c5f6 ./component/phy/fsl_phyksz8081.o
+ .debug_str     0x0030fb47   0x2eeb51 ./component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_Common.o
+ .debug_str     0x0030fb47   0x2ee666 ./component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_GlitchDetector.o
+ .debug_str     0x0030fb47   0x2ff0e6 ./board/board.o
+ .debug_str     0x0030fb47   0x28ea7c ./board/clock_config.o
+ .debug_str     0x0030fb47   0x28ea49 ./board/hardware_init.o
+ .debug_str     0x0030fb47   0x297bc8 ./board/pin_mux.o
+ .debug_str     0x0030fb47      0x199 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(_cr__main.o)
+ .debug_str     0x0030fb47      0x1b0 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(memset.o)
+ .debug_str     0x0030fb47      0x263 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(alloc.o)
+ .debug_str     0x0030fb47      0x144 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(errno.o)
+ .debug_str     0x0030fb47      0x26d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(initio.o)
+ .debug_str     0x0030fb47      0x263 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(setvbuf.o)
+ .debug_str     0x0030fb47      0x1aa C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(strlen.o)
+ .debug_str     0x0030fb47      0x1af C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(__init_alloc.o)
+ .debug_str     0x0030fb47      0x1f1 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_cr_sbrk.o)
+ .debug_str     0x0030fb47      0x2a7 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_deferredlazyseek.o)
+ .debug_str     0x0030fb47      0x260 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_fdopen.o)
+ .debug_str     0x0030fb47      0x242 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_fflush.o)
+ .debug_str     0x0030fb47      0x273 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_writebuf.o)
+ .debug_str     0x0030fb47      0x277 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fclose.o)
+ .debug_str     0x0030fb47      0x265 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fflush.o)
+ .debug_str     0x0030fb47      0x267 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fseek.o)
+ .debug_str     0x0030fb47      0x244 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(ftell.o)
+ .debug_str     0x0030fb47      0x203 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(remove.o)
+ .debug_str     0x0030fb47      0x1a3 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_cr_check_heap.o)
+ .debug_str     0x0030fb47      0x258 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_do_fflush.o)
+ .debug_str     0x0030fb47      0x231 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__ciob.o)
+ .debug_str     0x0030fb47      0x18a C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_close.o)
+ .debug_str     0x0030fb47      0x183 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_flen.o)
+ .debug_str     0x0030fb47      0x185 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_istty.o)
+ .debug_str     0x0030fb47      0x190 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_remove.o)
+ .debug_str     0x0030fb47      0x183 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_seek.o)
+ .debug_str     0x0030fb47      0x19d C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_tmpnam.o)
+ .debug_str     0x0030fb47      0x1a0 C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(__sys_write.o)
 
 .comment        0x00000000       0x44
  .comment       0x00000000       0x44 ./utilities/debug_console_lite/fsl_debug_console.o
                                  0x45 (size before relaxing)
  .comment       0x00000044       0x45 ./utilities/fsl_assert.o
  .comment       0x00000044       0x45 ./startup/startup_rw612.o
- .comment       0x00000044       0x45 ./source/enet_txrx_transfer.o
+ .comment       0x00000044       0x45 ./source/ethernet.o
  .comment       0x00000044       0x45 ./source/semihost_hardfault.o
  .comment       0x00000044       0x45 ./flash_config/flash_config.o
  .comment       0x00000044       0x45 ./drivers/fsl_clock.o
@@ -9703,7 +9703,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000094       0x38 ./startup/startup_rw612.o
  .ARM.attributes
-                0x000000cc       0x38 ./source/enet_txrx_transfer.o
+                0x000000cc       0x38 ./source/ethernet.o
  .ARM.attributes
                 0x00000104       0x38 ./source/semihost_hardfault.o
  .ARM.attributes
@@ -9813,7 +9813,7 @@ LOAD linker stubs
  .debug_frame   0x00000000      0x208 ./utilities/debug_console_lite/fsl_debug_console.o
  .debug_frame   0x00000208       0x58 ./utilities/fsl_assert.o
  .debug_frame   0x00000260      0xd14 ./startup/startup_rw612.o
- .debug_frame   0x00000f74      0x114 ./source/enet_txrx_transfer.o
+ .debug_frame   0x00000f74      0x114 ./source/ethernet.o
  .debug_frame   0x00001088       0x20 ./source/semihost_hardfault.o
  .debug_frame   0x000010a8      0x940 ./drivers/fsl_clock.o
  .debug_frame   0x000019e8       0xa0 ./drivers/fsl_common_arm.o
@@ -9948,7 +9948,7 @@ BOARD_InitDebugConsole                            ./board/board.o
                                                   ./board/hardware_init.o
 BOARD_InitFlash                                   ./board/board.o
 BOARD_InitHardware                                ./board/hardware_init.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 BOARD_InitModuleClock                             ./board/hardware_init.o
 BOARD_InitPins                                    ./board/pin_mux.o
 BOARD_InitPsRam                                   ./board/board.o
@@ -10023,7 +10023,7 @@ CLOCK_GetGauClkFreq                               ./drivers/fsl_clock.o
 CLOCK_GetLcdClkFreq                               ./drivers/fsl_clock.o
 CLOCK_GetMainClkFreq                              ./drivers/fsl_clock.o
                                                   ./board/hardware_init.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 CLOCK_GetMclkClkFreq                              ./drivers/fsl_clock.o
 CLOCK_GetOSTimerClkFreq                           ./drivers/fsl_clock.o
 CLOCK_GetSFroFreq                                 ./drivers/fsl_clock.o
@@ -10075,7 +10075,7 @@ DbgConsole_Getchar                                ./utilities/debug_console_lite
 DbgConsole_Init                                   ./utilities/debug_console_lite/fsl_debug_console.o
                                                   ./board/board.o
 DbgConsole_Printf                                 ./utilities/debug_console_lite/fsl_debug_console.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
                                                   ./utilities/fsl_assert.o
 DbgConsole_Putchar                                ./utilities/debug_console_lite/fsl_debug_console.o
 DbgConsole_Scanf                                  ./utilities/debug_console_lite/fsl_debug_console.o
@@ -10099,19 +10099,19 @@ ENET_ErrIRQHandler                                ./drivers/fsl_enet.o
 ENET_ErrorIRQHandler                              ./drivers/fsl_enet.o
 ENET_Error_DriverIRQHandler                       ./drivers/fsl_enet.o
 ENET_GetDefaultConfig                             ./drivers/fsl_enet.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 ENET_GetInstance                                  ./drivers/fsl_enet.o
                                                   ./board/hardware_init.o
 ENET_GetMacAddr                                   ./drivers/fsl_enet.o
 ENET_GetRxErrBeforeReadFrame                      ./drivers/fsl_enet.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 ENET_GetRxFrame                                   ./drivers/fsl_enet.o
 ENET_GetRxFrameSize                               ./drivers/fsl_enet.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 ENET_GetStatistics                                ./drivers/fsl_enet.o
 ENET_IRQHandler                                   ./startup/startup_rw612.o
 ENET_Init                                         ./drivers/fsl_enet.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 ENET_LeaveMulticastGroup                          ./drivers/fsl_enet.o
 ENET_MDIOC45Read                                  ./drivers/fsl_enet.o
 ENET_MDIOC45Write                                 ./drivers/fsl_enet.o
@@ -10121,7 +10121,7 @@ ENET_MDIOWrite                                    ./drivers/fsl_enet.o
                                                   ./board/hardware_init.o
 ENET_Ptp1588IRQHandler                            ./drivers/fsl_enet.o
 ENET_ReadFrame                                    ./drivers/fsl_enet.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 ENET_ReceiveIRQHandler                            ./drivers/fsl_enet.o
 ENET_Receive_DriverIRQHandler                     ./drivers/fsl_enet.o
 ENET_ReclaimTxDescriptor                          ./drivers/fsl_enet.o
@@ -10130,7 +10130,7 @@ ENET_ResetHardware                                ./drivers/fsl_enet.o
 ENET_ResetStatistics                              ./drivers/fsl_enet.o
 ENET_RxIRQHandler                                 ./drivers/fsl_enet.o
 ENET_SendFrame                                    ./drivers/fsl_enet.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 ENET_SetErrISRHandler                             ./drivers/fsl_enet.o
 ENET_SetMII                                       ./drivers/fsl_enet.o
 ENET_SetMacAddr                                   ./drivers/fsl_enet.o
@@ -10418,7 +10418,7 @@ SDIO_IRQHandler                                   ./startup/startup_rw612.o
 SDK_DelayAtLeastUs                                ./drivers/fsl_common_arm.o
                                                   ./board/hardware_init.o
                                                   ./board/board.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 SDK_Free                                          ./drivers/fsl_common.o
 SDK_Malloc                                        ./drivers/fsl_common.o
 SECUREVIOLATION_DriverIRQHandler                  ./startup/startup_rw612.o
@@ -10718,7 +10718,7 @@ flexspi_config                                    ./flash_config/flash_config.o
 free                                              C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(alloc.o)
                                                   C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fclose.o)
                                                   ./drivers/fsl_common.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 fscanf                                            C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(scanf.o)
 fseek                                             C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fseek.o)
                                                   C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(_do_fflush.o)
@@ -10729,15 +10729,15 @@ ftell                                             C:/nxp/MCUXpressoIDE_24.12.148
                                                   C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fseek.o)
 g_cache64MemPhyAliasId                            ./drivers/fsl_cache.o
 g_clkinFreq                                       ./drivers/fsl_clock.o
-g_macAddr                                         ./source/enet_txrx_transfer.o
+g_macAddr                                         ./source/ethernet.o
 g_mclkinFreq                                      ./drivers/fsl_clock.o
 g_pfnVectors                                      ./startup/startup_rw612.o
 g_phy_resource                                    ./board/hardware_init.o
-                                                  ./source/enet_txrx_transfer.o
-g_rxBuffDescrip                                   ./source/enet_txrx_transfer.o
-g_rxDataBuff                                      ./source/enet_txrx_transfer.o
-g_txBuffDescrip                                   ./source/enet_txrx_transfer.o
-g_txDataBuff                                      ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
+g_rxBuffDescrip                                   ./source/ethernet.o
+g_rxDataBuff                                      ./source/ethernet.o
+g_txBuffDescrip                                   ./source/ethernet.o
+g_txDataBuff                                      ./source/ethernet.o
 isalnum                                           C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(ctype.o)
 isalpha                                           C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(ctype.o)
 iscntrl                                           C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(ctype.o)
@@ -10750,11 +10750,11 @@ isspace                                           C:/nxp/MCUXpressoIDE_24.12.148
 isupper                                           C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(ctype.o)
 isxdigit                                          C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(ctype.o)
 kFlexcommIrqs                                     ./drivers/fsl_flexcomm.o
-main                                              ./source/enet_txrx_transfer.o
+main                                              ./source/ethernet.o
                                                   C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_nohost_nf.a(_cr__main.o)
 malloc                                            C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(alloc.o)
                                                   ./drivers/fsl_common.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 mcuxClBuffer_export                               ./component/els_pkc/src/comps/mcuxClBuffer/src/mcuxClBuffer.o
 mcuxClBuffer_import                               ./component/els_pkc/src/comps/mcuxClBuffer/src/mcuxClBuffer.o
 mcuxClEls_Disable                                 ./component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_Common.o
@@ -10807,7 +10807,7 @@ memcpy                                            ./utilities/fsl_memcpy.o
                                                   ./drivers/fsl_ocotp.o
                                                   ./drivers/fsl_enet.o
                                                   ./drivers/fsl_cache.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
                                                   ./utilities/debug_console_lite/fsl_debug_console.o
                                                   ./utilities/str/fsl_str.o
 memset                                            C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(memset.o)
@@ -10820,7 +10820,7 @@ memset                                            C:/nxp/MCUXpressoIDE_24.12.148
                                                   ./drivers/fsl_enet.o
                                                   ./drivers/fsl_cache.o
 phyksz8081_ops                                    ./component/phy/fsl_phyksz8081.o
-                                                  ./source/enet_txrx_transfer.o
+                                                  ./source/ethernet.o
 realloc                                           C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(alloc.o)
 remove                                            C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(remove.o)
                                                   C:/nxp/MCUXpressoIDE_24.12.148/ide/plugins/com.nxp.mcuxpresso.tools.win32_24.12.0.202407110909/tools/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v8-m.main+fp/hard\libcr_c.a(fclose.o)
