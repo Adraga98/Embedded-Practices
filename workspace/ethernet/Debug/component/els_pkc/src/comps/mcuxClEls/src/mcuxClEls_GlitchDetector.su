@@ -1,0 +1,9 @@
+C:\repos\embedded_practices\workspace\ethernet\component\els_pkc\src\comps\mcuxClEls\inc/internal/mcuxClEls_Internal.h:70:20:mcuxClEls_setInput0_fixedSize	16	static
+C:\repos\embedded_practices\workspace\ethernet\component\els_pkc\src\comps\mcuxClEls\inc/internal/mcuxClEls_Internal.h:116:20:mcuxClEls_setOutput_fixedSize	16	static
+C:\repos\embedded_practices\workspace\ethernet\component\els_pkc\src\comps\mcuxClEls\inc/internal/mcuxClEls_Internal.h:149:20:mcuxClEls_startCommand	32	static
+C:\repos\embedded_practices\workspace\ethernet\component\els_pkc\src\comps\mcuxClEls\inc/internal/mcuxClEls_Internal.h:163:24:mcuxClEls_getSfrField	24	static
+C:\repos\embedded_practices\workspace\ethernet\component\els_pkc\src\comps\mcuxClEls\inc/internal/mcuxClEls_Internal.h:182:20:mcuxClEls_isBusy	4	static
+../component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_GlitchDetector.c:26:63:mcuxClEls_GlitchDetector_LoadConfig_Async	48	static
+../component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_GlitchDetector.c:44:63:mcuxClEls_GlitchDetector_Trim_Async	48	static
+../component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_GlitchDetector.c:63:63:mcuxClEls_GlitchDetector_GetEventCounter	40	static
+../component/els_pkc/src/comps/mcuxClEls/src/mcuxClEls_GlitchDetector.c:81:63:mcuxClEls_GlitchDetector_ResetEventCounter	32	static

@@ -1,0 +1,4 @@
+C:\repos\embedded_practices\workspace\ethernet\drivers/fsl_io_mux.h:1579:20:IO_MUX_SetPinMux	32	static
+C:\repos\embedded_practices\workspace\ethernet\drivers/fsl_io_mux.h:1688:20:IO_MUX_SetPinConfig	40	static
+../board/pin_mux.c:37:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:68:6:BOARD_InitPins	40	static

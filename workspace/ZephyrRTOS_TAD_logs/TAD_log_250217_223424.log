@@ -1,0 +1,11 @@
+"Task Aware Debugger for GDB" version 24.12.0 (202407110909)
+Copyright 2016-2023 NXP
+==================================
+22:33:39.906 INFO: [ZephyrRTOS] .config file could not be read [C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmrw612_enet_txrx_transfer\Debug\.config (El sistema no puede encontrar el archivo especificado)]
+22:33:39.906 INFO: [TadModel] DSF session ID 0 has started.
+22:33:42.946 INFO: [TadState] TAD state changed: DEBUG_STARTED -> DEBUG_INIT_0 (SUSPENDED, USER_REQUEST)
+22:33:44.786 INFO: [TadState] TAD state changed: DEBUG_INIT_0 -> DEBUG_INIT_1 (RESUMED, USER_REQUEST)
+22:33:44.868 INFO: [TadState] TAD state changed: DEBUG_INIT_1 -> DEBUG_SUSPENDED (SUSPENDED, BREAKPOINT)
+22:34:03.211 INFO: [TadState] TAD state changed: DEBUG_SUSPENDED -> DEBUG_RESUMED (RESUMED, USER_REQUEST)
+22:34:23.809 INFO: [TadState] TAD state changed: DEBUG_RESUMED -> READY (SUSPENDED, SIGNAL)
+22:34:24.829 INFO: [TadModel] DSF session ID 0 has ended.

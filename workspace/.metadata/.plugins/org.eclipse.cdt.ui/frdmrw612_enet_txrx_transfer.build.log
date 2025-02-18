@@ -1,0 +1,11 @@
+22:33:40 **** Incremental Build of configuration Debug for project frdmrw612_enet_txrx_transfer ****
+make -r -j8 all 
+make[1]: Nothing to be done for 'main-build'.
+Performing post-build steps
+arm-none-eabi-size "frdmrw612_enet_txrx_transfer.axf"; # arm-none-eabi-objcopy -v -O binary "frdmrw612_enet_txrx_transfer.axf" "frdmrw612_enet_txrx_transfer.bin" ; # checksum -p RW612 -d "frdmrw612_enet_txrx_transfer.bin";
+   text	   data	    bss	    dec	    hex	filename
+  47284	      0	  22404	  69688	  11038	frdmrw612_enet_txrx_transfer.axf
+ 
+
+22:33:41 Build Finished. 0 errors, 0 warnings. (took 337ms)
+

@@ -1,0 +1,13 @@
+../board/board.c:283:6:BOARD_SetFlexspiClock	24	static
+../board/board.c:208:6:BOARD_DeinitFlash	16	static
+../board/board.c:224:6:BOARD_InitFlash	32	static
+C:\repos\embedded_practices\workspace\ethernet\drivers/fsl_io_mux.h:1726:20:IO_MUX_SetPinOutLevelInSleep	32	static
+C:\repos\embedded_practices\workspace\ethernet\drivers/fsl_io_mux.h:1778:20:IO_MUX_SetRfPinOutLevelInSleep	24	static
+../board/board.c:36:6:BOARD_InitDebugConsole	16	static
+../board/board.c:48:17:flexspi_hyper_ram_run_seq	40	static
+../board/board.c:66:10:BOARD_InitPsRam	216	static
+../board/board.c:187:6:BOARD_InitSleepPinConfig	16	static
+../board/board.c:309:13:LoadGdetCfg	56	static
+../board/board.c:350:13:ConfigSvcSensor	56	static
+../board/board.c:403:6:BOARD_ClockPreConfig	8	static
+../board/board.c:427:6:BOARD_ClockPostConfig	8	static

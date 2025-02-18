@@ -1,0 +1,150 @@
+/*
+ * Copyright (c) 2015, Freescale Semiconductor, Inc.
+ * Copyright 2016-2017 NXP
+ * All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+/* FreeRTOS kernel includes. */
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "timers.h"
+
+/* Freescale includes. */
+#include "fsl_device_registers.h"
+#include "fsl_debug_console.h"
+#include "board.h"
+#include "app.h"
+
+/*******************************************************************************
+ * Definitions
+ ******************************************************************************/
+/* Task priorities. */
+#define hello_task_PRIORITY1 (configMAX_PRIORITIES - 5)
+#define hello_task_PRIORITY2 (configMAX_PRIORITIES - 4)
+#define hello_task_PRIORITY3 (configMAX_PRIORITIES - 3)
+#define hello_task_PRIORITY4 (configMAX_PRIORITIES - 2)
+#define hello_task_PRIORITY5 (configMAX_PRIORITIES - 1)
+/*******************************************************************************
+ * Prototypes
+ ******************************************************************************/
+static void hello_task1(void *pvParameters);
+static void hello_task2(void *pvParameters);
+static void hello_task3(void *pvParameters);
+static void hello_task4(void *pvParameters);
+static void hello_task5(void *pvParameters);
+
+/*******************************************************************************
+ * Code
+ ******************************************************************************/
+/*!
+ * @brief Application entry point.
+ */
+int main(void)
+{
+    /* Init board hardware. */
+    BOARD_InitHardware();
+    if (xTaskCreate(hello_task1, "Hello_task1", configMINIMAL_STACK_SIZE + 100, NULL, hello_task_PRIORITY1, NULL) !=
+        pdPASS)
+    {
+        PRINTF("Task creation failed!.\r\n");
+        while (1)
+            ;
+    }
+
+    if (xTaskCreate(hello_task2, "Hello_task2", configMINIMAL_STACK_SIZE + 100, NULL, hello_task_PRIORITY2, NULL) !=
+           pdPASS)
+       {
+           PRINTF("Task creation failed!.\r\n");
+           while (1)
+               ;
+       }
+
+    if (xTaskCreate(hello_task3, "Hello_task3", configMINIMAL_STACK_SIZE + 100, NULL, hello_task_PRIORITY3, NULL) !=
+           pdPASS)
+       {
+           PRINTF("Task creation failed!.\r\n");
+           while (1)
+               ;
+       }
+
+    if (xTaskCreate(hello_task4, "Hello_task4", configMINIMAL_STACK_SIZE + 100, NULL, hello_task_PRIORITY4, NULL) !=
+           pdPASS)
+       {
+           PRINTF("Task creation failed!.\r\n");
+           while (1)
+               ;
+       }
+
+    if (xTaskCreate(hello_task5, "Hello_task5", configMINIMAL_STACK_SIZE + 100, NULL, hello_task_PRIORITY5, NULL) !=
+           pdPASS)
+       {
+           PRINTF("Task creation failed!.\r\n");
+           while (1)
+               ;
+       }
+    vTaskStartScheduler();
+    for (;;)
+        ;
+}
+
+/*!
+ * @brief Task responsible for printing of "Hello Task 1." message.
+ */
+static void hello_task1(void *pvParameters)
+{
+	vTaskSuspend(NULL);
+    for (;;)
+    {
+        PRINTF("Hello Task 1.\r\n");
+//        vTaskSuspend(NULL);
+    }
+}
+/*!
+ * @brief Task responsible for printing of "Hello Task 2." message.
+ */
+static void hello_task2(void *pvParameters)
+{
+    for (;;)
+    {
+        PRINTF("Hello Task 2.\r\n");
+        vTaskSuspend(NULL);
+    }
+}
+/*!
+ * @brief Task responsible for printing of "Hello Task 3." message.
+ */
+static void hello_task3(void *pvParameters)
+{
+    for (;;)
+    {
+        PRINTF("Hello Task 3.\r\n");
+        vTaskSuspend(NULL);
+    }
+}
+/*!
+ * @brief Task responsible for printing of "Hello Task 4." message.
+ */
+static void hello_task4(void *pvParameters)
+{
+    for (;;)
+    {
+        PRINTF("Hello Task 4.\r\n");
+        vTaskSuspend(NULL);
+    }
+}
+/*!
+ * @brief Task responsible for printing of "Hello Task 5." message.
+ */
+static void hello_task5(void *pvParameters)
+{
+    for (;;)
+    {
+        PRINTF("Hello Task 5.\r\n");
+        vTaskSuspend(NULL);
+    }
+}
+
+

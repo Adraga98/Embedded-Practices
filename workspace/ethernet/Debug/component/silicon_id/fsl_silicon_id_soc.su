@@ -1,0 +1,1 @@
+../component/silicon_id/fsl_silicon_id_soc.c:10:10:SILICONID_ReadUniqueID	16	static

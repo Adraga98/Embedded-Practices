@@ -1,0 +1,6 @@
+C:\repos\embedded_practices\workspace\ethernet\drivers/fsl_gpio.h:153:20:GPIO_PinWrite	24	static
+../board/hardware_init.c:21:6:BOARD_InitModuleClock	8	static
+../board/hardware_init.c:27:13:MDIO_Init	16	static
+../board/hardware_init.c:36:17:MDIO_Write	16	static
+../board/hardware_init.c:41:17:MDIO_Read	16	static
+../board/hardware_init.c:46:6:BOARD_InitHardware	8	static

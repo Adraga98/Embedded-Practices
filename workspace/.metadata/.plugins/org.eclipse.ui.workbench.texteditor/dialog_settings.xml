@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="LWIP_DNS"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="LWIP_DNS"/>
+			<item value="LWIP_DN"/>
+			<item value="LWIP_D"/>
+			<item value="INIT_THREAD_STACKSIZE"/>
+			<item value="nextState"/>
+			<item value="stateCurr"/>
+			<item value="BOARD_LED_GPIO"/>
+			<item value="g_ButtonPress"/>
+			<item value=" = false;"/>
+			<item value="BOARD_SW_IRQ_HANDLER"/>
+			<item value="BOARD_SW_IRQ"/>
+			<item value="BOARD_SW_NAME"/>
+			<item value="BOARD_LED_GPIO_RED_PIN"/>
+			<item value="BOARD_LED_GPIO_PIN"/>
+			<item value="BOARD_SW_GPIO_PIN"/>
+		</list>
+		<list key="replacehistory">
+			<item value="curr_State"/>
+			<item value="nextState"/>
+			<item value="BOARD_LED_BLUE "/>
+			<item value="g_Button_A"/>
+			<item value="BOARD_SW2_IRQ_HANDLER"/>
+			<item value="BOARD_SW2_IRQ"/>
+			<item value="BOARD_SW2_NAME"/>
+			<item value="BOARD_LED_GPIO_PIN_RED"/>
+			<item value="BOARD_LED_GPIO_RED_PIN"/>
+			<item value="BOARD_LED_GPIO_RED"/>
+			<item value="BOARD_SW02_GPIO_PIN"/>
+			<item value="BOARD_SW02_GPIO _PIN"/>
+			<item value="BOARD_SW02_GPIO "/>
+			<item value="g_ButtonSW1"/>
+			<item value="g_ButtonPress"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="975"/>
+		<item key="DIALOG_Y_ORIGIN" value="134"/>
+		<item key="DIALOG_WIDTH" value="322"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

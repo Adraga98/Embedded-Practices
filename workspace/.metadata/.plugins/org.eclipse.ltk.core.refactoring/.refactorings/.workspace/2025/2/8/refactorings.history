@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 5 resources" deleteContents="false" description="Delete 5 resources" element1="/frdmmcxa153_freertos_hello" element2="/frdmmcxa153_gpio_input_interrupt" element3="/frdmmcxa153_wheels" element4="/frdmrw612_enet_txrx_transfer" element5="/frdmrw612_lwip_ipv4_ipv6_echo_freertos" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="5" stamp="1739853825411"/>
+</session>

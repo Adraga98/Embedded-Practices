@@ -1,0 +1,25 @@
+21:54:52 **** Incremental Build of configuration Debug for project frdmmcxa153_freertos_hello ****
+make -r -j8 all 
+Building file: ../source/freertos_hello.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -std=gnu99 -D__REDLIB__ -DCPU_MCXA153VLH -DCPU_MCXA153VLH_cm33_nodsp -DMCUXPRESSO_SDK -DSDK_DEBUGCONSOLE=1 -DMCUX_META_BUILD -DSDK_OS_FREE_RTOS -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\source" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\drivers" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\CMSIS" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\CMSIS\m-profile" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\device" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\device\periph" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\utilities" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\utilities\str" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\utilities\debug_console_lite" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\component\uart" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\freertos\freertos-kernel\include" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\freertos\freertos-kernel\portable\GCC\ARM_CM33_NTZ\non_secure" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\board" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\freertos\freertos-kernel\template" -I"C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\freertos\freertos-kernel\template\ARM_CM33_3_priority_bits" -O0 -fno-common -g3 -gdwarf-4 -mcpu=cortex-m33+nodsp -c -ffunction-sections -fdata-sections -fno-builtin -imacros "C:\Users\adria\Documents\MCUXpressoIDE_24.12.148\workspace\frdmmcxa153_freertos_hello\source\mcux_config.h" -fmerge-constants -fmacro-prefix-map="../source/"= -mcpu=cortex-m33+nodsp -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/freertos_hello.d" -MT"source/freertos_hello.o" -MT"source/freertos_hello.d" -o "source/freertos_hello.o" "../source/freertos_hello.c"
+Finished building: ../source/freertos_hello.c
+ 
+Building target: frdmmcxa153_freertos_hello.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -Xlinker -no-warn-rwx-segments -Xlinker -Map="frdmmcxa153_freertos_hello.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m33+nodsp -mthumb -T frdmmcxa153_freertos_hello_Debug.ld -o "frdmmcxa153_freertos_hello.axf" ./utilities/str/fsl_str.o  ./utilities/debug_console_lite/fsl_debug_console.o  ./utilities/fsl_assert.o ./utilities/fsl_memcpy.o  ./startup/startup_mcxa153.o  ./source/freertos_hello.o ./source/semihost_hardfault.o  ./freertos/freertos-kernel/portable/MemMang/heap_4.o  ./freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure/mpu_wrappers_v2_asm.o ./freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure/port.o ./freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.o  ./freertos/freertos-kernel/croutine.o ./freertos/freertos-kernel/event_groups.o ./freertos/freertos-kernel/list.o ./freertos/freertos-kernel/queue.o ./freertos/freertos-kernel/stream_buffer.o ./freertos/freertos-kernel/tasks.o ./freertos/freertos-kernel/timers.o  ./drivers/fsl_clock.o ./drivers/fsl_common.o ./drivers/fsl_common_arm.o ./drivers/fsl_gpio.o ./drivers/fsl_lpuart.o ./drivers/fsl_reset.o ./drivers/fsl_spc.o  ./device/system_MCXA153.o  ./component/uart/fsl_adapter_lpuart.o  ./board/board.o ./board/clock_config.o ./board/hardware_init.o ./board/pin_mux.o   
+Memory region         Used Size  Region Size  %age Used
+   PROGRAM_FLASH:       21092 B       128 KB     16.09%
+            SRAM:       14012 B        24 KB     57.01%
+          SRAMX0:          0 GB         8 KB      0.00%
+          SRAMX1:          0 GB         4 KB      0.00%
+Finished building target: frdmmcxa153_freertos_hello.axf
+ 
+Performing post-build steps
+arm-none-eabi-size "frdmmcxa153_freertos_hello.axf"; # arm-none-eabi-objcopy -v -O binary "frdmmcxa153_freertos_hello.axf" "frdmmcxa153_freertos_hello.bin" ; # checksum -p MCXA153 -d "frdmmcxa153_freertos_hello.bin";
+   text	   data	    bss	    dec	    hex	filename
+  21080	     12	  14000	  35092	   8914	frdmmcxa153_freertos_hello.axf
+ 
+
+21:55:00 Build Finished. 0 errors, 0 warnings. (took 7s.520ms)
+
