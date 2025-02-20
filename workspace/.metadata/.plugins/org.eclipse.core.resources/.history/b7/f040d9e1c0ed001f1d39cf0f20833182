@@ -1,0 +1,10 @@
+#ifndef ETHERNET_H
+#define ETHERNET_H
+
+void ethernet_Init(ethernetCfg *cfg);
+
+void ethernet_Send(uint8_t *data, uint16_t length);
+
+
+
+#endif //ETHERNET

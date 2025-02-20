@@ -3,5 +3,7 @@ C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:200:24:PH
 C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:277:24:PHY_GetAutoNegotiationStatus	16	static
 C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:292:24:PHY_GetLinkStatus	16	static
 C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:309:24:PHY_GetLinkSpeedDuplex	24	static
-../source/ethernet.c:99:13:ENET_BuildBroadCastFrame	16	static
-../source/ethernet.c:130:5:main	224	static
+../source/ethernet.c:70:6:ethernet_Init	32	static
+../source/ethernet.c:87:6:ethernet_Received	104	static
+../source/ethernet.c:124:13:ENET_BuildBroadCastFrame	24	static
+../source/ethernet.c:149:5:main	224	static

@@ -94,7 +94,8 @@ source/ethernet.o source/ethernet.d: ../source/ethernet.c \
  C:\repos\embedded_practices\workspace\ethernet\drivers/fsl_gpio.h \
  C:\repos\embedded_practices\workspace\ethernet\board/app.h \
  C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phyksz8081.h \
- C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h
+ C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h \
+ ../source/ethernet.h ../source/ethernet_cfg.h
 C:\repos\embedded_practices\workspace\ethernet\source\mcux_config.h:
 C:\repos\embedded_practices\workspace\ethernet\utilities\debug_console_lite/fsl_debug_console.h:
 C:\repos\embedded_practices\workspace\ethernet\drivers/fsl_common.h:
@@ -191,3 +192,5 @@ C:\repos\embedded_practices\workspace\ethernet\drivers/fsl_gpio.h:
 C:\repos\embedded_practices\workspace\ethernet\board/app.h:
 C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phyksz8081.h:
 C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:
+../source/ethernet.h:
+../source/ethernet_cfg.h:

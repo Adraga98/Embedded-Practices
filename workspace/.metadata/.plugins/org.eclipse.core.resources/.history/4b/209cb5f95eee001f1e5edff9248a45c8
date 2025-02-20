@@ -1,0 +1,21 @@
+#ifndef ETHERNET_CFG_H
+#define ETHERNET_CFG_H
+
+typedef struct {
+	uint8_t macAddress[6];
+	uint32_t ipAddress;
+	uint16_t port;
+}ETHcfg;
+
+const *g_frame[16]{
+	"No todo lo que es oro reluce...",
+	"Aun en la oscuridad...",
+	"¿Qué es la vida?",
+	"No temas a la ocuridad",
+	"Hasta los más pequeños",
+	"No digas que el sol se ha puesto",
+	"El coraje se encuentra",
+	"No todos los tesoros",
+};
+
+#endif //ETHERNET_CFG_H

@@ -11,6 +11,7 @@
 #include "fsl_phy.h"
 #include "board.h"
 #include "app.h"
+#include "ethernet.h"
 
 /*******************************************************************************
  * Definitions
@@ -21,48 +22,19 @@
 #define ENET_TXBUFF_SIZE       (ENET_FRAME_MAX_FRAMELEN)
 #define ENET_DATA_LENGTH       (1000)
 #define ENET_TRANSMIT_DATA_NUM (20)
-#ifndef APP_ENET_BUFF_ALIGNMENT
 #define APP_ENET_BUFF_ALIGNMENT ENET_BUFF_ALIGNMENT
-#endif
-#ifndef PHY_AUTONEGO_TIMEOUT_COUNT
 #define PHY_AUTONEGO_TIMEOUT_COUNT (300000)
-#endif
-#ifndef EXAMPLE_PHY_LINK_INTR_SUPPORT
 #define EXAMPLE_PHY_LINK_INTR_SUPPORT (0U)
-#endif
-#ifndef EXAMPLE_USES_LOOPBACK_CABLE
 #define EXAMPLE_USES_LOOPBACK_CABLE (1U)
-#endif
-
-#ifndef PHY_STABILITY_DELAY_US
-#if EXAMPLE_USES_LOOPBACK_CABLE
 #define PHY_STABILITY_DELAY_US (0U)
-#else
-/* If cable is not used there is no "readiness wait" caused by auto negotiation. Lets wait 100ms.*/
-#define PHY_STABILITY_DELAY_US (100000U)
-#endif
-#endif
 
 /* @TEST_ANCHOR */
-
-#ifndef MAC_ADDRESS
-#define MAC_ADDRESS                        \
-    {                                      \
-        0x54, 0x27, 0x8d, 0x00, 0x00, 0x00 \
-    }
-#else
-#define USER_DEFINED_MAC_ADDRESS
-#endif
 
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
 /*! @brief Build ENET broadcast frame. */
 static void ENET_BuildBroadCastFrame(void);
-
-#if (defined(EXAMPLE_PHY_LINK_INTR_SUPPORT) && (EXAMPLE_PHY_LINK_INTR_SUPPORT))
-void GPIO_EnableLinkIntr(void);
-#endif
 
 /*******************************************************************************
  * Variables
@@ -84,45 +56,92 @@ static enet_handle_t g_handle;
 static uint8_t g_frame[ENET_DATA_LENGTH + 14];
 
 /*! @brief The MAC address for ENET device. */
-uint8_t g_macAddr[6] = MAC_ADDRESS;
+uint8_t g_macAddr_src[6] = MAC_ADDRESS_src;
+uint8_t g_macAddr_dest[6] = MAC_ADDRESS_dest;
+
+ETHcfg ethConfig = {MAC_ADDRESS_src,MAC_ADDRESS_dest};
 
 /*! @brief PHY status. */
 static phy_handle_t phyHandle;
-#if ((EXAMPLE_USES_LOOPBACK_CABLE) && defined(EXAMPLE_PHY_LINK_INTR_SUPPORT) && (EXAMPLE_PHY_LINK_INTR_SUPPORT))
-static bool linkChange = false;
-#endif
 
 /*******************************************************************************
  * Code
  ******************************************************************************/
+void ethernet_Init(ETHcfg *cfg){
+	uint32_t count  = 0;
+	uint32_t length = ENET_DATA_LENGTH - 14;
+	uint32_t lenMsg = 0;
+	static uint32_t msgIndex = 0;
+
+	memcpy(&g_frame[0], &ethConfig.macAddress_dest[0], 6U); //copying MAC dest
+	memcpy(&g_frame[6], &ethConfig.macAddress_src[0], 6U); //copying MAC src
+
+	g_frame[12] = (length >> 8) & 0xFFU;
+	g_frame[13] = length & 0xFFU;
+	for (count = 0; count < length; count++)
+	{
+		g_frame[count + 14] = count % 0xFFU;
+	}
+}
+
+void ethernet_Received(void){
+	uint32_t u32length;
+	enet_data_error_stats_t eErrStatic;
+	status_t status;
+	/* Get the Frame size */
+	status = ENET_GetRxFrameSize(&g_handle, &u32length, 0);
+	/* Call ENET_ReadFrame when there is a received frame. */
+	if (u32length != 0)
+	{
+		/* Received valid frame. Deliver the rx buffer with the size equal to length. */
+		uint8_t *data = (uint8_t *)malloc(u32length);
+		status        = ENET_ReadFrame(EXAMPLE_ENET, &g_handle, data, u32length, 0, NULL);
+		if (status == kStatus_Success)
+		{
+			PRINTF(" A frame received. the length %d ", u32length);
+			PRINTF(" Dest Address %02x:%02x:%02x:%02x:%02x:%02x Src Address %02x:%02x:%02x:%02x:%02x:%02x \r\n",
+				   data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9],
+				   data[10], data[11]);
+			//memcpy(u8buffer, &data[14], u32length - 14); // Copiar el mensaje al buffer
+			//u8buffer[u32length - 14] = '\0'; // Asegurar terminación de string
+			PRINTF("Mensaje recibido: %s\r\n", &data[14]);
+		}
+		free(data);
+	}
+	else if (status == kStatus_ENET_RxFrameError)
+	{
+		/* Update the received buffer when error happened. */
+		/* Get the error information of the received g_frame. */
+		ENET_GetRxErrBeforeReadFrame(&g_handle, &eErrStatic, 0);
+		/* update the receive buffer. */
+		ENET_ReadFrame(EXAMPLE_ENET, &g_handle, NULL, 0, 0, NULL);
+	}
+
+
+}
+
 /*! @brief Build Frame for transmit. */
 static void ENET_BuildBroadCastFrame(void)
 {
     uint32_t count  = 0;
     uint32_t length = ENET_DATA_LENGTH - 14;
+    uint32_t lenMsg = 0;
+    static uint32_t msgIndex = 0;
 
-    for (count = 0; count < 6U; count++)
-    {
-        g_frame[count] = 0xFFU;
-    }
-    memcpy(&g_frame[6], &g_macAddr[0], 6U);
+    memcpy(&g_frame[0], &g_macAddr_dest[0], 6U); //copying MAC dest
+    memcpy(&g_frame[6], &g_macAddr_src[0], 6U); //copying MAC src
     g_frame[12] = (length >> 8) & 0xFFU;
     g_frame[13] = length & 0xFFU;
-
     for (count = 0; count < length; count++)
     {
         g_frame[count + 14] = count % 0xFFU;
     }
+   /* lenMsg = strlen(phrase[msgIndex]);
+    //copying message
+    memcpy(&g_frame[14], phrase[msgIndex], lenMsg);
+    msgIndex = (msgIndex+1)%16;*/
 }
 
-#if (defined(EXAMPLE_PHY_LINK_INTR_SUPPORT) && (EXAMPLE_PHY_LINK_INTR_SUPPORT))
-void PHY_LinkStatusChange(void)
-{
-#if (EXAMPLE_USES_LOOPBACK_CABLE)
-    linkChange = true;
-#endif
-}
-#endif
 
 /*!
  * @brief Main function
@@ -135,14 +154,12 @@ int main(void)
     enet_data_error_stats_t eErrStatic;
     status_t status;
     enet_config_t config;
-#if EXAMPLE_USES_LOOPBACK_CABLE
     volatile uint32_t count = 0;
     phy_speed_t speed;
     phy_duplex_t duplex;
     bool autonego = false;
     bool link     = false;
     bool tempLink = false;
-#endif
 
     /* Hardware Initialization. */
     BOARD_InitHardware();
@@ -174,27 +191,15 @@ int main(void)
     ENET_GetDefaultConfig(&config);
 
     /* The miiMode should be set according to the different PHY interfaces. */
-#ifdef EXAMPLE_PHY_INTERFACE_RGMII
-    config.miiMode = kENET_RgmiiMode;
-#else
     config.miiMode = kENET_RmiiMode;
-#endif
+
     phyConfig.phyAddr = EXAMPLE_PHY_ADDRESS;
-#if EXAMPLE_USES_LOOPBACK_CABLE
     phyConfig.autoNeg = true;
-#else
-    phyConfig.autoNeg = false;
-    config.miiDuplex  = kENET_MiiFullDuplex;
-#endif
     phyConfig.ops      = EXAMPLE_PHY_OPS;
     phyConfig.resource = EXAMPLE_PHY_RESOURCE;
-#if (defined(EXAMPLE_PHY_LINK_INTR_SUPPORT) && (EXAMPLE_PHY_LINK_INTR_SUPPORT))
-    phyConfig.intrType = kPHY_IntrActiveLow;
-#endif
 
     /* Initialize PHY and wait auto-negotiation over. */
     PRINTF("Wait for PHY init...\r\n");
-#if EXAMPLE_USES_LOOPBACK_CABLE
     do
     {
         status = PHY_Init(&phyHandle, &phyConfig);
@@ -221,62 +226,32 @@ int main(void)
             }
         }
     } while (!(link && autonego));
-#else
-    while (PHY_Init(&phyHandle, &phyConfig) != kStatus_Success)
-    {
-        PRINTF("PHY_Init failed\r\n");
-    }
 
-    /* set PHY link speed/duplex and enable loopback. */
-    PHY_SetLinkSpeedDuplex(&phyHandle, (phy_speed_t)config.miiSpeed, (phy_duplex_t)config.miiDuplex);
-    PHY_EnableLoopback(&phyHandle, kPHY_LocalLoop, (phy_speed_t)config.miiSpeed, true);
-#endif /* EXAMPLE_USES_LOOPBACK_CABLE */
-
-#if PHY_STABILITY_DELAY_US
-    /* Wait a moment for PHY status to be stable. */
-    SDK_DelayAtLeastUs(PHY_STABILITY_DELAY_US, SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY);
-#endif
-
-#if EXAMPLE_USES_LOOPBACK_CABLE
     /* Get the actual PHY link speed and set in MAC. */
     PHY_GetLinkSpeedDuplex(&phyHandle, &speed, &duplex);
     config.miiSpeed  = (enet_mii_speed_t)speed;
     config.miiDuplex = (enet_mii_duplex_t)duplex;
-#endif
-
-#ifndef USER_DEFINED_MAC_ADDRESS
-    /* Set special address for each chip. */
-//    SILICONID_ConvertToMacAddr(&g_macAddr);
-#endif
 
     /* Init the ENET. */
-    ENET_Init(EXAMPLE_ENET, &g_handle, &config, &buffConfig[0], &g_macAddr[0], EXAMPLE_CLOCK_FREQ);
+    ENET_Init(EXAMPLE_ENET, &g_handle, &config, &buffConfig[0], &g_macAddr_src[0], EXAMPLE_CLOCK_FREQ);
     ENET_ActiveRead(EXAMPLE_ENET);
 
     /* Build broadcast for sending. */
-    ENET_BuildBroadCastFrame();
+    //ENET_BuildBroadCastFrame();
+    ethernet_Init(&ethConfig);
 
     while (1)
     {
-#if EXAMPLE_USES_LOOPBACK_CABLE
         /* PHY link status update. */
-#if (defined(EXAMPLE_PHY_LINK_INTR_SUPPORT) && (EXAMPLE_PHY_LINK_INTR_SUPPORT))
-        if (linkChange)
-        {
-            linkChange = false;
-            PHY_ClearInterrupt(&phyHandle);
-            PHY_GetLinkStatus(&phyHandle, &link);
-            GPIO_EnableLinkIntr();
-        }
-#else
+
         PHY_GetLinkStatus(&phyHandle, &link);
-#endif
+
         if (tempLink != link)
         {
             PRINTF("PHY link changed, link status = %u\r\n", link);
             tempLink = link;
         }
-#endif /*EXAMPLE_USES_LOOPBACK_CABLE*/
+
         /* Get the Frame size */
         status = ENET_GetRxFrameSize(&g_handle, &length, 0);
         /* Call ENET_ReadFrame when there is a received frame. */
@@ -306,12 +281,18 @@ int main(void)
         if (testTxNum < ENET_TRANSMIT_DATA_NUM)
         {
             /* Send a multicast frame when the PHY is link up. */
-#if EXAMPLE_USES_LOOPBACK_CABLE
+
             if (link)
-#endif
+
             {
                 testTxNum++;
                 SDK_DelayAtLeastUs(10000, SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY);
+                PRINTF("Antes de enviar: MAC Destino en frame: %02X:%02X:%02X:%02X:%02X:%02X\n",
+                       g_frame[0], g_frame[1], g_frame[2], g_frame[3], g_frame[4], g_frame[5]);
+
+                PRINTF("Antes de enviar: MAC Origen en frame: %02X:%02X:%02X:%02X:%02X:%02X\n",
+                       g_frame[6], g_frame[7], g_frame[8], g_frame[9], g_frame[10], g_frame[11]);
+
                 if (kStatus_Success ==
                     ENET_SendFrame(EXAMPLE_ENET, &g_handle, &g_frame[0], ENET_DATA_LENGTH, 0, false, NULL))
                 {
