@@ -1,0 +1,11 @@
+"Task Aware Debugger for GDB" version 24.12.0 (202407110909)
+Copyright 2016-2023 NXP
+==================================
+02:54:51.852 INFO: [ZephyrRTOS] .config file could not be read [C:\repos\embedded_practices\workspace\ethernet\Debug\.config (El sistema no puede encontrar el archivo especificado)]
+02:54:51.852 INFO: [TadModel] DSF session ID 22 has started.
+02:54:55.614 INFO: [TadState] TAD state changed: DEBUG_STARTED -> DEBUG_INIT_0 (SUSPENDED, USER_REQUEST)
+02:54:57.432 INFO: [TadState] TAD state changed: DEBUG_INIT_0 -> DEBUG_INIT_1 (RESUMED, USER_REQUEST)
+02:54:57.449 INFO: [TadState] TAD state changed: DEBUG_INIT_1 -> DEBUG_SUSPENDED (SUSPENDED, BREAKPOINT)
+02:55:00.179 INFO: [TadState] TAD state changed: DEBUG_SUSPENDED -> DEBUG_RESUMED (RESUMED, USER_REQUEST)
+02:56:10.832 INFO: [TadState] TAD state changed: DEBUG_RESUMED -> READY (SUSPENDED, SIGNAL)
+02:56:11.810 INFO: [TadModel] DSF session ID 22 has ended.

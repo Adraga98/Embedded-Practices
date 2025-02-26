@@ -5024,3 +5024,1506 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-20 15:58:13.261
 !MESSAGE Telnet session connected on port 2333->51554 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-20 17:17:20.548
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-20 17:17:20.971
+!MESSAGE Telnet session connected on port 2333->55254 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-20 17:20:16.008
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-20 17:20:16.338
+!MESSAGE Telnet session connected on port 2333->56140 @ 127.0.0.1
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2025-02-20 17:20:50.108
+!MESSAGE Execution exception for: ParameterizedCommand(Command(org.eclipse.cdt.make.ui.targetBuildLastCommand,Rebuild Last Target,
+		Rebuild the last make target for the selected container or project.,
+		Category(org.eclipse.ui.category.project,Project,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.cdt.make.ui.targetBuildLastCommand"),
+		,,true),null) in 
+	context chain: WorkbenchContext -> org.eclipse.ui.contexts.dialog
+!STACK 0
+org.eclipse.core.commands.ExecutionException: Error executing 'org.eclipse.cdt.make.ui.targetBuildLastCommand': java.lang.NullPointerException: Cannot invoke "org.eclipse.ui.IWorkbenchWindow.getActivePage()" because "this.fWindow" is null
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:179)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:308)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:580)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:655)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:439)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:96)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1286)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1065)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1090)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1075)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1117)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Widget.wmKeyDown(Widget.java:1840)
+	at org.eclipse.swt.widgets.Control.WM_KEYDOWN(Control.java:5153)
+	at org.eclipse.swt.widgets.Table.WM_KEYDOWN(Table.java:5898)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4776)
+	at org.eclipse.swt.widgets.Table.windowProc(Table.java:5814)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5039)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3657)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.cdt.make.ui.actions.BuildLastTargetAction.run(BuildLastTargetAction.java:91)
+	at org.eclipse.cdt.make.ui.actions.BuildLastTargetHandler.execute(BuildLastTargetHandler.java:42)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:283)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:99)
+	at jdk.internal.reflect.GeneratedMethodAccessor88.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:298)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:232)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:165)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.executeCommand(KeyBindingDispatcher.java:308)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.press(KeyBindingDispatcher.java:580)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.processKeyEvent(KeyBindingDispatcher.java:655)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher.filterKeySequenceBindings(KeyBindingDispatcher.java:439)
+	at org.eclipse.e4.ui.bindings.keys.KeyBindingDispatcher$KeyDownFilter.handleEvent(KeyBindingDispatcher.java:96)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1286)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1065)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1090)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1075)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1117)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Widget.wmKeyDown(Widget.java:1840)
+	at org.eclipse.swt.widgets.Control.WM_KEYDOWN(Control.java:5153)
+	at org.eclipse.swt.widgets.Canvas.WM_KEYDOWN(Canvas.java:406)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4776)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5039)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3657)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:342)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:648)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:342)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:555)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+Caused by: org.eclipse.e4.core.di.InjectionException: java.lang.NullPointerException: Cannot invoke "org.eclipse.ui.IWorkbenchWindow.getActivePage()" because "this.fWindow" is null
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:68)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:298)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:232)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:165)
+	... 81 more
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.ui.IWorkbenchWindow.getActivePage()" because "this.fWindow" is null
+	at org.eclipse.cdt.make.ui.actions.AbstractTargetAction.selectionChanged(AbstractTargetAction.java:105)
+	at org.eclipse.cdt.make.ui.actions.BuildLastTargetHandler.execute(BuildLastTargetHandler.java:39)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:283)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:99)
+	at jdk.internal.reflect.GeneratedMethodAccessor88.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	... 85 more
+
+!ENTRY com.crt.utils 1 0 2025-02-20 17:21:16.951
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-20 17:21:17.560
+!MESSAGE Telnet session connected on port 2333->56917 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-20 17:23:30.522
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-20 17:23:31.152
+!MESSAGE Telnet session connected on port 2333->58045 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-20 17:45:43.407
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-20 17:45:44.096
+!MESSAGE Telnet session connected on port 2333->59254 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-20 17:50:51.859
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-20 17:50:52.507
+!MESSAGE Telnet session connected on port 2333->60150 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-20 17:52:13.592
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-20 17:52:14.228
+!MESSAGE Telnet session connected on port 2333->61179 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-20 17:55:48.938
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-20 17:55:49.625
+!MESSAGE Telnet session connected on port 2333->62146 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-20 17:59:14.399
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-20 17:59:15.069
+!MESSAGE Telnet session connected on port 2333->63007 @ 127.0.0.1
+!SESSION 2025-02-20 19:18:01.640 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_MX
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-02-20 19:19:16.559
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\adria'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2025-02-25 15:16:45.115 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_MX
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY MCUXpresso IDE 4 -1 2025-02-25 15:23:33.229
+!MESSAGE The SDK 'SDK_2.x_FRDM-RW612' ('24.12.000') for project 'ethernet' can not be found!
+Version '2.16.100' will be used!
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-02-25 15:23:33.279
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\adria'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.crt.utils 1 0 2025-02-25 21:58:52.458
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-25 21:58:53.014
+!MESSAGE Telnet session connected on port 2333->54938 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-25 22:31:39.209
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-25 22:31:39.758
+!MESSAGE Telnet session connected on port 2333->56070 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-25 22:32:55.932
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-25 22:32:56.583
+!MESSAGE Telnet session connected on port 2333->57219 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-26 02:03:03.545
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 02:03:04.217
+!MESSAGE Telnet session connected on port 2333->58406 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-26 02:04:58.530
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 02:04:59.181
+!MESSAGE Telnet session connected on port 2333->59241 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-26 02:09:02.835
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 02:09:03.396
+!MESSAGE Telnet session connected on port 2333->60219 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-26 02:12:47.058
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 02:12:47.666
+!MESSAGE Telnet session connected on port 2333->61384 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-26 02:20:41.704
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 02:20:42.280
+!MESSAGE Telnet session connected on port 2333->62377 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-26 02:22:10.877
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY org.eclipse.debug.core 4 125 2025-02-26 02:22:10.895
+!MESSAGE Error logged from Debug Core: 
+!STACK 1
+org.eclipse.core.runtime.CoreException: Source lookup error
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector$SourceLookupQuery.run(AbstractSourceLookupDirector.java:168)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.doSourceLookup(AbstractSourceLookupDirector.java:473)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.getSourceElement(AbstractSourceLookupDirector.java:714)
+	at org.eclipse.cdt.dsf.debug.ui.sourcelookup.DsfSourceDisplayAdapter$LookupJob.performLookup(DsfSourceDisplayAdapter.java:223)
+	at org.eclipse.cdt.dsf.debug.ui.sourcelookup.DsfSourceDisplayAdapter$LookupJob.run(DsfSourceDisplayAdapter.java:203)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Target not available.
+Contains: Target not available.
+!SUBENTRY 1 org.eclipse.debug.core 4 125 2025-02-26 02:22:10.899
+!MESSAGE Source lookup error
+!SUBENTRY 2 org.eclipse.cdt.dsf 4 10001 2025-02-26 02:22:10.899
+!MESSAGE Target not available.
+!SUBENTRY 2 org.eclipse.cdt.dsf 4 10001 2025-02-26 02:22:10.899
+!MESSAGE Target not available.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 02:22:11.551
+!MESSAGE Telnet session connected on port 2333->63160 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-26 02:24:32.621
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 02:24:33.251
+!MESSAGE Telnet session connected on port 2333->64268 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-26 02:39:06.932
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 02:39:07.530
+!MESSAGE Telnet session connected on port 2333->65184 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-26 02:54:57.439
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 02:54:58.061
+!MESSAGE Telnet session connected on port 2333->49886 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-26 03:02:46.252
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 03:02:46.924
+!MESSAGE Telnet session connected on port 2333->51064 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.245
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@16a89ebd): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[32])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.245
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[32])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.246
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@701567d8): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[38])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.246
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[38])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.246
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@233b6785): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[9])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.246
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[9])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.247
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@186b0c08): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[24])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.247
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[24])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.247
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@1aef36cb): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[7])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.247
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[7])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.248
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@5823cc2b): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[18])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.248
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[18])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.248
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@341bbd4): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[39])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.248
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[39])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.249
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@50ba5cad): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[10])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.249
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[10])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.249
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@248f3594): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[29])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.249
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[29])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.249
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@8ae72d2): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[20])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.249
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[20])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.250
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@45bf76f6): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[30])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.250
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[30])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.251
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@423940a): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[0])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.251
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[0])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.251
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@61038d1b): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[26])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.251
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[26])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.252
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@1ed4c6f1): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[11])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.252
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[11])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.252
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@4fefe3e): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[33])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.252
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[33])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.253
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@689b86cc): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[14])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.253
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[14])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.253
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@57f84080): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[1])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.253
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[1])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.253
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@352337a8): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[2])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.253
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[2])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.254
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@2661e3c8): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[21])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.254
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[21])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.254
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@585e9ba7): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[31])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.254
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[31])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.255
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@248a1a0d): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[17])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.255
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[17])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.256
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@71e704fb): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[23])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.256
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[23])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.257
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@168a8b8a): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[28])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.257
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[28])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.257
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@5e99ad8a): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[27])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.258
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[27])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.258
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@3e919015): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[34])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.258
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[34])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.258
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@ed2ba8a): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[37])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.258
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[37])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.259
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@4dd5a370): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[6])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.259
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[6])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.259
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@6ece0f32): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[15])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.259
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[15])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.260
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@45f0bd3d): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[3])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.260
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[3])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.260
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@310f999f): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[4])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.260
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[4])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.260
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@2679cb3b): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[16])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.260
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[16])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.269
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@7b3b9e8b): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[8])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.269
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[8])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.269
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@43260a9f): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[22])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.269
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[22])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.270
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@19a8a310): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[25])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.270
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[25])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.271
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@509dbcc6): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[36])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.271
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[36])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.271
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@3abd7972): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[5])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.271
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[5])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.283
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@7acbf4de): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[12])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.284
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[12])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.284
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@4cf8b5d4): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[19])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.284
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[19])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.285
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@4ea5f1f2): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[13])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.285
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[13])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:03:44.286
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@248b596b): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[35])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:03:44.286
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[35])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.192
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@149908cf): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[18])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.192
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[18])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.192
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@5f697ee): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[1])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.192
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[1])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.224
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@71af3276): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[25])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.224
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[25])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.225
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@a8fbc3c): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[33])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.225
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[33])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.226
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@4becdcba): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[24])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.226
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[24])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.226
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@50b4c634): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[0])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.226
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[0])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.227
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@1931ed16): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[11])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.227
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[11])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.228
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@1e2640fc): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[35])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.228
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[35])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.230
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@4463965f): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[38])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.230
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[38])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.231
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@2ae84efc): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[36])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.231
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[36])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.232
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@2b813589): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[17])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.232
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[17])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.232
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@6bc0b09e): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[2])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.232
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[2])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.233
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@7ed6849c): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[14])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.233
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[14])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.234
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@77f59953): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[34])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.234
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[34])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.234
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@548db221): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[13])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.234
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[13])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.235
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@b083d4a): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[16])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.235
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[16])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.236
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@160fa36e): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[21])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.236
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[21])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.236
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@18184b11): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[19])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.236
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[19])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.236
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@4be70c52): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[10])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.236
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[10])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.237
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@d2a6306): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[3])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.237
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[3])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.238
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@18ddaedb): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[4])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.238
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[4])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.238
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@1600ce50): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[7])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.238
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[7])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.239
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@5590d76e): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[26])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.239
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[26])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.239
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@6803d4a0): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[39])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.239
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[39])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.239
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@6b933470): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[8])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.239
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[8])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.240
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@6a686324): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[9])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.240
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[9])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.240
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@7dd96275): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[31])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.240
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[31])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.241
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@14e69d68): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[5])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.241
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[5])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.241
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@508b9b0f): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[30])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.242
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[30])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.242
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@10bc752d): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[23])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.242
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[23])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.243
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@3ab7d5c2): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[29])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.243
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[29])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.243
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@35304839): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[12])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.243
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[12])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.243
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@73aef36a): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[20])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.243
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[20])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.244
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@7fc6c6e5): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[32])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.244
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[32])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.245
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@15a60b84): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[28])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.245
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[28])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.247
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@152531ba): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[22])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.247
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[22])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.248
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@1dbb7ea5): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[37])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.248
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[37])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.248
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@14ae2059): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[27])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.248
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[27])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.249
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@4f9f0703): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[15])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.249
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[15])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2025-02-26 03:04:01.249
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIMemory$4@51f74207): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[6])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory. java.lang.Exception: Attempt to take address of value not located in memory.' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2025-02-26 03:04:01.249
+!MESSAGE Failed to execute MI command:
+-data-evaluate-expression "&(\"\\r\\nThere are not msgs in the buffer!!!\\r\\n\"[6])"
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+!STACK 0
+java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY com.crt.utils 1 0 2025-02-26 03:16:17.954
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 03:16:18.614
+!MESSAGE Telnet session connected on port 2333->52392 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-02-26 03:18:17.339
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-02-26 03:18:17.990
+!MESSAGE Telnet session connected on port 2333->53375 @ 127.0.0.1

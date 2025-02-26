@@ -19,7 +19,7 @@ typedef struct {
 
 const char *phrase[NUM_PHRASES] = {
 	"No todo lo que es oro reluce...",
-	"Aun en la oscuridad...",
+	"Aún en la oscuridad...",
 	"¿Qué es la vida?",
 	"No temas a la ocuridad",
 	"Hasta los más pequeños",

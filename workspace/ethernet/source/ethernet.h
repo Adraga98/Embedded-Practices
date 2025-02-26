@@ -3,7 +3,7 @@
 
 #include "ethernet_cfg.h"
 
-void ethernet_Init(ETHcfg *cfg);
+void ethernet_Init(void);
 
 void ethernet_Send(void);
 

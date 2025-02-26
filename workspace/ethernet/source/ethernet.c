@@ -21,7 +21,7 @@
 #define ENET_RXBUFF_SIZE       (ENET_FRAME_MAX_FRAMELEN)
 #define ENET_TXBUFF_SIZE       (ENET_FRAME_MAX_FRAMELEN)
 #define ENET_DATA_LENGTH       (1000)
-#define ENET_TRANSMIT_DATA_NUM (20)
+#define ENET_TRANSMIT_DATA_NUM (32)
 #define APP_ENET_BUFF_ALIGNMENT ENET_BUFF_ALIGNMENT
 #define PHY_AUTONEGO_TIMEOUT_COUNT (300000)
 #define EXAMPLE_PHY_LINK_INTR_SUPPORT (0U)
@@ -34,7 +34,7 @@
  * Prototypes
  ******************************************************************************/
 /*! @brief Build ENET broadcast frame. */
-static void ENET_BuildBroadCastFrame(void);
+static void ENET_BuildBroadCastFrame(const char *phrase);
 
 /*******************************************************************************
  * Variables
@@ -59,52 +59,190 @@ static uint8_t g_frame[ENET_DATA_LENGTH + 14];
 uint8_t g_macAddr_src[6] = MAC_ADDRESS_src;
 uint8_t g_macAddr_dest[6] = MAC_ADDRESS_dest;
 
+static phy_handle_t phyHandle;
 ETHcfg ethConfig = {MAC_ADDRESS_src,MAC_ADDRESS_dest};
 
-/*! @brief PHY status. */
-static phy_handle_t phyHandle;
+uint32_t testTxNum     = 0;
 
 /*******************************************************************************
  * Code
  ******************************************************************************/
-void ethernet_Init(ETHcfg *cfg){
-	uint32_t count  = 0;
-	uint32_t length = ENET_DATA_LENGTH - 14;
-	uint32_t lenMsg = 0;
-	static uint32_t msgIndex = 0;
+/*! @brief Build Frame for transmit. */
+static void ENET_BuildBroadCastFrame(const char *phrase)
+{
+    uint32_t count  = 0;
+    uint32_t length = strlen(phrase);
 
-	memcpy(&g_frame[0], &ethConfig.macAddress_dest[0], 6U); //copying MAC dest
-	memcpy(&g_frame[6], &ethConfig.macAddress_src[0], 6U); //copying MAC src
+    memcpy(&g_frame[0], &ethConfig.macAddress_dest, 6U);
+    memcpy(&g_frame[6], &ethConfig.macAddress_src, 6U);
 
-	g_frame[12] = (length >> 8) & 0xFFU;
-	g_frame[13] = length & 0xFFU;
-	for (count = 0; count < length; count++)
-	{
-		g_frame[count + 14] = count % 0xFFU;
-	}
+    g_frame[12] = (length >> 8) & 0xFFU; //Copiando tamaño de datos
+    g_frame[13] = length & 0xFFU; //Copiando tamaño de datos
+
+    memcpy(&g_frame[14], phrase, length);
 }
 
-void ethernet_Received(void){
-	uint32_t u32length;
-	enet_data_error_stats_t eErrStatic;
+/*! @brief PHY status. */
+
+/*******************************************************************************
+ * Code
+ ******************************************************************************/
+void ethernet_Init(void){
+	phy_config_t phyConfig = {0};
 	status_t status;
-	/* Get the Frame size */
-	status = ENET_GetRxFrameSize(&g_handle, &u32length, 0);
-	/* Call ENET_ReadFrame when there is a received frame. */
-	if (u32length != 0)
+	enet_config_t config;
+	volatile uint32_t count = 0;
+	phy_speed_t speed;
+	phy_duplex_t duplex;
+	bool autonego = false;
+	bool link     = false;
+
+	PRINTF("\r\nStart Init Configuration.\r\n");
+
+	/* Prepare the buffer configuration. */
+	enet_buffer_config_t buffConfig[] = {{
+		ENET_RXBD_NUM,
+		ENET_TXBD_NUM,
+		SDK_SIZEALIGN(ENET_RXBUFF_SIZE, APP_ENET_BUFF_ALIGNMENT),
+		SDK_SIZEALIGN(ENET_TXBUFF_SIZE, APP_ENET_BUFF_ALIGNMENT),
+		&g_rxBuffDescrip[0],
+		&g_txBuffDescrip[0],
+		&g_rxDataBuff[0][0],
+		&g_txDataBuff[0][0],
+		true,
+		true,
+		NULL,
+	}};
+
+
+	/* Get default configuration. */
+	/*
+	 * config.miiMode = kENET_RmiiMode;
+	 * config.miiSpeed = kENET_MiiSpeed100M;
+	 * config.miiDuplex = kENET_MiiFullDuplex;
+	 * config.rxMaxFrameLen = ENET_FRAME_MAX_FRAMELEN;
+	 */
+	ENET_GetDefaultConfig(&config);
+
+	config.miiMode = kENET_RmiiMode;
+
+	phyConfig.phyAddr = EXAMPLE_PHY_ADDRESS;
+	phyConfig.autoNeg = true;
+	phyConfig.ops      = EXAMPLE_PHY_OPS;
+	phyConfig.resource = EXAMPLE_PHY_RESOURCE;
+
+	/* Initialize PHY and wait auto-negotiation over. */
+	PRINTF("Wait for PHY init...\r\n");
+
+	do
 	{
-		/* Received valid frame. Deliver the rx buffer with the size equal to length. */
-		uint8_t *data = (uint8_t *)malloc(u32length);
-		status        = ENET_ReadFrame(EXAMPLE_ENET, &g_handle, data, u32length, 0, NULL);
+		status = PHY_Init(&phyHandle, &phyConfig);
 		if (status == kStatus_Success)
 		{
-			PRINTF(" A frame received. the length %d ", u32length);
+			PRINTF("Wait for PHY link up...\r\n");
+			/* Wait for auto-negotiation success and link up */
+			count = PHY_AUTONEGO_TIMEOUT_COUNT;
+			do
+			{
+				PHY_GetLinkStatus(&phyHandle, &link);
+				if (link)
+				{
+					PHY_GetAutoNegotiationStatus(&phyHandle, &autonego);
+					if (autonego)
+					{
+						PRINTF("Successfully Autonego...\r\n");
+						break;
+					}
+				}
+			} while (--count);
+			if (!autonego)
+			{
+				PRINTF("PHY Auto-negotiation failed. Please check the cable connection and link partner setting.\r\n");
+			}
+		}
+	} while (!(link && autonego));
+
+	PHY_GetLinkSpeedDuplex(&phyHandle, &speed, &duplex);
+	config.miiSpeed  = (enet_mii_speed_t)speed;
+	config.miiDuplex = (enet_mii_duplex_t)duplex;
+	/* Init the ENET. */
+	ENET_Init(EXAMPLE_ENET, &g_handle, &config, &buffConfig[0], &g_macAddr_src[0], EXAMPLE_CLOCK_FREQ);
+	ENET_ActiveRead(EXAMPLE_ENET);
+
+}
+
+void ethernet_Send(void){
+	status_t status;
+	bool link     = false;
+	bool tempLink = false;
+	const char *msg = phrase[testTxNum % NUM_PHRASES];
+	PRINTF("\r\nInicialization Send of Frames...\r\n");
+
+	PHY_GetLinkStatus(&phyHandle, &link);
+
+	 if (tempLink != link)
+	{
+		PRINTF("PHY link changed, link status = %u\r\n", link);
+		tempLink = link;
+	}
+
+	 ENET_BuildBroadCastFrame(msg);
+
+	  if (testTxNum < ENET_TRANSMIT_DATA_NUM)
+	  {
+		  /* Send a multicast frame when the PHY is link up. */
+		  if (link){
+			  testTxNum++;
+			  SDK_DelayAtLeastUs(10000, SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY);
+			  if (kStatus_Success == ENET_SendFrame(EXAMPLE_ENET, &g_handle, &g_frame[0], ENET_DATA_LENGTH, 0, false, NULL))
+			  {
+				  PRINTF("The %d frame transmitted success: \"%s\"!\r\n", testTxNum, msg);
+			  }
+			  else
+			  {
+				  PRINTF(" \r\nTransmit frame failed!\r\n");
+			  }
+		  }
+	  }
+
+}
+void ethernet_Received(void){
+	enet_data_error_stats_t eErrStatic;
+	status_t status;
+	bool tempLink = false;
+	bool link     = false;
+	uint32_t length        = 0;
+
+	PHY_GetLinkStatus(&phyHandle, &link);
+	if (tempLink != link)
+	{
+		PRINTF("PHY link changed, link status = %u\r\n", link);
+		tempLink = link;
+	}
+	/* Get the Frame size */
+	status = ENET_GetRxFrameSize(&g_handle, &length, 0);
+	/* Call ENET_ReadFrame when there is a received frame. */
+	if (length != 0)
+	{
+		/* Received valid frame. Deliver the rx buffer with the size equal to length. */
+		uint8_t *data = (uint8_t *)malloc(length+1);
+		if (data == NULL){
+			PRINTF("\r\nThere are not msgs in the buffer!!!\r\n");
+			return;
+		}
+
+		status        = ENET_ReadFrame(EXAMPLE_ENET, &g_handle, data, length, 0, NULL);
+		if (status == kStatus_Success)
+		{
+			data[length] = '\0';
+			PRINTF("\r\n>>> A frame received. the length %d ", length);
+			PRINTF(">>>Message: %s\r\n", data);
 			PRINTF(" Dest Address %02x:%02x:%02x:%02x:%02x:%02x Src Address %02x:%02x:%02x:%02x:%02x:%02x \r\n",
 				   data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9],
 				   data[10], data[11]);
-			//memcpy(u8buffer, &data[14], u32length - 14); // Copiar el mensaje al buffer
-			//u8buffer[u32length - 14] = '\0'; // Asegurar terminación de string
-			PRINTF("Mensaje recibido: %s\r\n", &data[14]);
+		}
+		else{
+			PRINTF("Error al leer el frame recibido.\r\n");
 		}
 		free(data);
 	}
@@ -116,30 +254,6 @@ void ethernet_Received(void){
 		/* update the receive buffer. */
 		ENET_ReadFrame(EXAMPLE_ENET, &g_handle, NULL, 0, 0, NULL);
 	}
-
-
-}
-
-/*! @brief Build Frame for transmit. */
-static void ENET_BuildBroadCastFrame(void)
-{
-    uint32_t count  = 0;
-    uint32_t length = ENET_DATA_LENGTH - 14;
-    uint32_t lenMsg = 0;
-    static uint32_t msgIndex = 0;
-
-    memcpy(&g_frame[0], &g_macAddr_dest[0], 6U); //copying MAC dest
-    memcpy(&g_frame[6], &g_macAddr_src[0], 6U); //copying MAC src
-    g_frame[12] = (length >> 8) & 0xFFU;
-    g_frame[13] = length & 0xFFU;
-    for (count = 0; count < length; count++)
-    {
-        g_frame[count + 14] = count % 0xFFU;
-    }
-   /* lenMsg = strlen(phrase[msgIndex]);
-    //copying message
-    memcpy(&g_frame[14], phrase[msgIndex], lenMsg);
-    msgIndex = (msgIndex+1)%16;*/
 }
 
 
@@ -148,161 +262,21 @@ static void ENET_BuildBroadCastFrame(void)
  */
 int main(void)
 {
-    phy_config_t phyConfig = {0};
-    uint32_t testTxNum     = 0;
-    uint32_t length        = 0;
-    enet_data_error_stats_t eErrStatic;
-    status_t status;
-    enet_config_t config;
-    volatile uint32_t count = 0;
-    phy_speed_t speed;
-    phy_duplex_t duplex;
-    bool autonego = false;
-    bool link     = false;
-    bool tempLink = false;
 
-    /* Hardware Initialization. */
-    BOARD_InitHardware();
+	/* Hardware Initialization. */
+	BOARD_InitHardware();
 
-    PRINTF("\r\nENET example start.\r\n");
+	PRINTF("\r\nStart Inicialization of Ethernet...\r\n");
 
-    /* Prepare the buffer configuration. */
-    enet_buffer_config_t buffConfig[] = {{
-        ENET_RXBD_NUM,
-        ENET_TXBD_NUM,
-        SDK_SIZEALIGN(ENET_RXBUFF_SIZE, APP_ENET_BUFF_ALIGNMENT),
-        SDK_SIZEALIGN(ENET_TXBUFF_SIZE, APP_ENET_BUFF_ALIGNMENT),
-        &g_rxBuffDescrip[0],
-        &g_txBuffDescrip[0],
-        &g_rxDataBuff[0][0],
-        &g_txDataBuff[0][0],
-        true,
-        true,
-        NULL,
-    }};
+	ethernet_Init();
 
-    /* Get default configuration. */
-    /*
-     * config.miiMode = kENET_RmiiMode;
-     * config.miiSpeed = kENET_MiiSpeed100M;
-     * config.miiDuplex = kENET_MiiFullDuplex;
-     * config.rxMaxFrameLen = ENET_FRAME_MAX_FRAMELEN;
-     */
-    ENET_GetDefaultConfig(&config);
+	for(int i= 0; i<ENET_TRANSMIT_DATA_NUM; i++){
 
-    /* The miiMode should be set according to the different PHY interfaces. */
-    config.miiMode = kENET_RmiiMode;
+		ethernet_Send();
+		ethernet_Received();
+		SDK_DelayAtLeastUs(5000000, SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY);
 
-    phyConfig.phyAddr = EXAMPLE_PHY_ADDRESS;
-    phyConfig.autoNeg = true;
-    phyConfig.ops      = EXAMPLE_PHY_OPS;
-    phyConfig.resource = EXAMPLE_PHY_RESOURCE;
+	}
 
-    /* Initialize PHY and wait auto-negotiation over. */
-    PRINTF("Wait for PHY init...\r\n");
-    do
-    {
-        status = PHY_Init(&phyHandle, &phyConfig);
-        if (status == kStatus_Success)
-        {
-            PRINTF("Wait for PHY link up...\r\n");
-            /* Wait for auto-negotiation success and link up */
-            count = PHY_AUTONEGO_TIMEOUT_COUNT;
-            do
-            {
-                PHY_GetLinkStatus(&phyHandle, &link);
-                if (link)
-                {
-                    PHY_GetAutoNegotiationStatus(&phyHandle, &autonego);
-                    if (autonego)
-                    {
-                        break;
-                    }
-                }
-            } while (--count);
-            if (!autonego)
-            {
-                PRINTF("PHY Auto-negotiation failed. Please check the cable connection and link partner setting.\r\n");
-            }
-        }
-    } while (!(link && autonego));
 
-    /* Get the actual PHY link speed and set in MAC. */
-    PHY_GetLinkSpeedDuplex(&phyHandle, &speed, &duplex);
-    config.miiSpeed  = (enet_mii_speed_t)speed;
-    config.miiDuplex = (enet_mii_duplex_t)duplex;
-
-    /* Init the ENET. */
-    ENET_Init(EXAMPLE_ENET, &g_handle, &config, &buffConfig[0], &g_macAddr_src[0], EXAMPLE_CLOCK_FREQ);
-    ENET_ActiveRead(EXAMPLE_ENET);
-
-    /* Build broadcast for sending. */
-    //ENET_BuildBroadCastFrame();
-    ethernet_Init(&ethConfig);
-
-    while (1)
-    {
-        /* PHY link status update. */
-
-        PHY_GetLinkStatus(&phyHandle, &link);
-
-        if (tempLink != link)
-        {
-            PRINTF("PHY link changed, link status = %u\r\n", link);
-            tempLink = link;
-        }
-
-        /* Get the Frame size */
-        status = ENET_GetRxFrameSize(&g_handle, &length, 0);
-        /* Call ENET_ReadFrame when there is a received frame. */
-        if (length != 0)
-        {
-            /* Received valid frame. Deliver the rx buffer with the size equal to length. */
-            uint8_t *data = (uint8_t *)malloc(length);
-            status        = ENET_ReadFrame(EXAMPLE_ENET, &g_handle, data, length, 0, NULL);
-            if (status == kStatus_Success)
-            {
-                PRINTF(" A frame received. the length %d ", length);
-                PRINTF(" Dest Address %02x:%02x:%02x:%02x:%02x:%02x Src Address %02x:%02x:%02x:%02x:%02x:%02x \r\n",
-                       data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9],
-                       data[10], data[11]);
-            }
-            free(data);
-        }
-        else if (status == kStatus_ENET_RxFrameError)
-        {
-            /* Update the received buffer when error happened. */
-            /* Get the error information of the received g_frame. */
-            ENET_GetRxErrBeforeReadFrame(&g_handle, &eErrStatic, 0);
-            /* update the receive buffer. */
-            ENET_ReadFrame(EXAMPLE_ENET, &g_handle, NULL, 0, 0, NULL);
-        }
-
-        if (testTxNum < ENET_TRANSMIT_DATA_NUM)
-        {
-            /* Send a multicast frame when the PHY is link up. */
-
-            if (link)
-
-            {
-                testTxNum++;
-                SDK_DelayAtLeastUs(10000, SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY);
-                PRINTF("Antes de enviar: MAC Destino en frame: %02X:%02X:%02X:%02X:%02X:%02X\n",
-                       g_frame[0], g_frame[1], g_frame[2], g_frame[3], g_frame[4], g_frame[5]);
-
-                PRINTF("Antes de enviar: MAC Origen en frame: %02X:%02X:%02X:%02X:%02X:%02X\n",
-                       g_frame[6], g_frame[7], g_frame[8], g_frame[9], g_frame[10], g_frame[11]);
-
-                if (kStatus_Success ==
-                    ENET_SendFrame(EXAMPLE_ENET, &g_handle, &g_frame[0], ENET_DATA_LENGTH, 0, false, NULL))
-                {
-                    PRINTF("The %d frame transmitted success!\r\n", testTxNum);
-                }
-                else
-                {
-                    PRINTF(" \r\nTransmit frame failed!\r\n");
-                }
-            }
-        }
-    }
 }
