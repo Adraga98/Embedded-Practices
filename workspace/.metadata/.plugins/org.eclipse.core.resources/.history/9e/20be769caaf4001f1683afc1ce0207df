@@ -1,0 +1,8 @@
+#ifndef CRC_H
+#define CRC_H
+
+void InitCrc16_CcittFalse(CRC_Type *base, uint32_t seed);
+
+void InitCrc16(CRC_Type *base, uint32_t seed);
+
+#endif //CRC

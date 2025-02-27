@@ -1,0 +1,3 @@
+../source/crc.c:39:6:InitCrc16_CcittFalse	32	static
+../source/crc.c:62:6:InitCrc16	32	static
+../source/crc.c:83:6:InitCrc32	32	static

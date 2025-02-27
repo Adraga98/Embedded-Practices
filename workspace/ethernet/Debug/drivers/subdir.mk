@@ -8,6 +8,7 @@ C_SRCS += \
 ../drivers/fsl_clock.c \
 ../drivers/fsl_common.c \
 ../drivers/fsl_common_arm.c \
+../drivers/fsl_crc.c \
 ../drivers/fsl_enet.c \
 ../drivers/fsl_flexcomm.c \
 ../drivers/fsl_flexspi.c \
@@ -24,6 +25,7 @@ C_DEPS += \
 ./drivers/fsl_clock.d \
 ./drivers/fsl_common.d \
 ./drivers/fsl_common_arm.d \
+./drivers/fsl_crc.d \
 ./drivers/fsl_enet.d \
 ./drivers/fsl_flexcomm.d \
 ./drivers/fsl_flexspi.d \
@@ -40,6 +42,7 @@ OBJS += \
 ./drivers/fsl_clock.o \
 ./drivers/fsl_common.o \
 ./drivers/fsl_common_arm.o \
+./drivers/fsl_crc.o \
 ./drivers/fsl_enet.o \
 ./drivers/fsl_flexcomm.o \
 ./drivers/fsl_flexspi.o \
@@ -64,7 +67,7 @@ drivers/%.o: ../drivers/%.c drivers/subdir.mk
 clean: clean-drivers
 
 clean-drivers:
-	-$(RM) ./drivers/fsl_cache.d ./drivers/fsl_cache.o ./drivers/fsl_clock.d ./drivers/fsl_clock.o ./drivers/fsl_common.d ./drivers/fsl_common.o ./drivers/fsl_common_arm.d ./drivers/fsl_common_arm.o ./drivers/fsl_enet.d ./drivers/fsl_enet.o ./drivers/fsl_flexcomm.d ./drivers/fsl_flexcomm.o ./drivers/fsl_flexspi.d ./drivers/fsl_flexspi.o ./drivers/fsl_gpio.d ./drivers/fsl_gpio.o ./drivers/fsl_i2s_bridge.d ./drivers/fsl_i2s_bridge.o ./drivers/fsl_iped.d ./drivers/fsl_iped.o ./drivers/fsl_ocotp.d ./drivers/fsl_ocotp.o ./drivers/fsl_power.d ./drivers/fsl_power.o ./drivers/fsl_reset.d ./drivers/fsl_reset.o ./drivers/fsl_usart.d ./drivers/fsl_usart.o
+	-$(RM) ./drivers/fsl_cache.d ./drivers/fsl_cache.o ./drivers/fsl_clock.d ./drivers/fsl_clock.o ./drivers/fsl_common.d ./drivers/fsl_common.o ./drivers/fsl_common_arm.d ./drivers/fsl_common_arm.o ./drivers/fsl_crc.d ./drivers/fsl_crc.o ./drivers/fsl_enet.d ./drivers/fsl_enet.o ./drivers/fsl_flexcomm.d ./drivers/fsl_flexcomm.o ./drivers/fsl_flexspi.d ./drivers/fsl_flexspi.o ./drivers/fsl_gpio.d ./drivers/fsl_gpio.o ./drivers/fsl_i2s_bridge.d ./drivers/fsl_i2s_bridge.o ./drivers/fsl_iped.d ./drivers/fsl_iped.o ./drivers/fsl_ocotp.d ./drivers/fsl_ocotp.o ./drivers/fsl_power.d ./drivers/fsl_power.o ./drivers/fsl_reset.d ./drivers/fsl_reset.o ./drivers/fsl_usart.d ./drivers/fsl_usart.o
 
 .PHONY: clean-drivers
 

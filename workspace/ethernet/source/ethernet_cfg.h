@@ -21,19 +21,19 @@ const char *phrase[NUM_PHRASES] = {
 	"No todo lo que es oro reluce...",
 	"Aún en la oscuridad...",
 	"¿Qué es la vida?",
-	"No temas a la ocuridad",
-	"Hasta los más pequeños",
-	"No digas que el sol se ha puesto",
-	"El coraje se encuentra",
-	"No todos los tesoros",
-	"Es peligroso",
-	"Un mago nunca llega tarde",
-	"Aun hay esperanza",
-	"El mundo esta cambiando",
-	"Las raices profundas",
-	"No se puede",
-	"Y sobre todo",
-	"De las cenizas, un fuego"
+	"No temas a la oscuridad...",
+	"Hasta los más pequeños...",
+	"No digas que el sol se ha puesto...",
+	"El coraje se encuentra...",
+	"No todos los tesoros...",
+	"Es peligroso...",
+	"Un mago nunca llega tarde...",
+	"Aún hay esperanza...",
+	"El mundo está cambiando...",
+	"Las raíces profundas...",
+	"No se puede...",
+	"Y sobre todo...",
+	"De las cenizas, un fuego..."
 };
 
 #endif //ETHERNET_CFG_H

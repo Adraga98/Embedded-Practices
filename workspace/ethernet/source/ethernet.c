@@ -9,9 +9,12 @@
 #include "fsl_silicon_id.h"
 #include "fsl_enet.h"
 #include "fsl_phy.h"
+#include "fsl_crc.h"
 #include "board.h"
 #include "app.h"
 #include "ethernet.h"
+#include "crc.h"
+#include "aes.h"
 
 /*******************************************************************************
  * Definitions
@@ -21,20 +24,24 @@
 #define ENET_RXBUFF_SIZE       (ENET_FRAME_MAX_FRAMELEN)
 #define ENET_TXBUFF_SIZE       (ENET_FRAME_MAX_FRAMELEN)
 #define ENET_DATA_LENGTH       (1000)
-#define ENET_TRANSMIT_DATA_NUM (32)
+#define ENET_TRANSMIT_DATA_NUM (32)		//Número de datos a transmitir
 #define APP_ENET_BUFF_ALIGNMENT ENET_BUFF_ALIGNMENT
-#define PHY_AUTONEGO_TIMEOUT_COUNT (300000)
+#define PHY_AUTONEGO_TIMEOUT_COUNT (300000)		//Tiempo de espera para la negociación automática
 #define EXAMPLE_PHY_LINK_INTR_SUPPORT (0U)
 #define EXAMPLE_USES_LOOPBACK_CABLE (1U)
 #define PHY_STABILITY_DELAY_US (0U)
 
+#define SEED 0xFFFFFFFFU
+#define CRC_ENGINE CRC
+#define CRC_LEN sizeof(uint32_t)	//Longitud del CRC
 /* @TEST_ANCHOR */
 
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
 /*! @brief Build ENET broadcast frame. */
-static void ENET_BuildBroadCastFrame(const char *phrase);
+//Prototipo de la función encargada de construir las tramas.
+static int ENET_BuildBroadCastFrame(const char *phrase);
 
 /*******************************************************************************
  * Variables
@@ -53,33 +60,66 @@ SDK_ALIGN(uint8_t g_txDataBuff[ENET_TXBD_NUM][SDK_SIZEALIGN(ENET_TXBUFF_SIZE, AP
 
 /*! @brief MAC transfer. */
 static enet_handle_t g_handle;
-static uint8_t g_frame[ENET_DATA_LENGTH + 14];
+static uint8_t g_frame[ENET_DATA_LENGTH + 14]; //Frame de datos: Header + Data
 
 /*! @brief The MAC address for ENET device. */
-uint8_t g_macAddr_src[6] = MAC_ADDRESS_src;
-uint8_t g_macAddr_dest[6] = MAC_ADDRESS_dest;
+uint8_t g_macAddr_src[6] = MAC_ADDRESS_src;//Dirección MAC de origen
+uint8_t g_macAddr_dest[6] = MAC_ADDRESS_dest;//Dirección MAC Destino
 
-static phy_handle_t phyHandle;
-ETHcfg ethConfig = {MAC_ADDRESS_src,MAC_ADDRESS_dest};
+static phy_handle_t phyHandle;//Handle para el PHY
+ETHcfg ethConfig = {MAC_ADDRESS_dest, MAC_ADDRESS_src};//Configuración ethernet utilizada para el envío de las direcciones MAC
 
 uint32_t testTxNum     = 0;
-
+CRC_Type *base = CRC_ENGINE;
 /*******************************************************************************
  * Code
  ******************************************************************************/
 /*! @brief Build Frame for transmit. */
-static void ENET_BuildBroadCastFrame(const char *phrase)
+static int ENET_BuildBroadCastFrame(const char *phrase)
 {
     uint32_t count  = 0;
-    uint32_t length = strlen(phrase);
+    uint32_t length = strlen(phrase); //Longitud de la frase
+    uint32_t paddLength = 0;
+    struct AES_ctx ctx;
+    uint8_t aes_key[] = "My16byteKey00000";//Clave AES de 16 bytes
+    uint8_t aes_iv[] = "My16byteIV000000";//Vector de Inicialización AES de 16 bytes.
+    uint32_t checksum32 = 0;
+    uint32_t sizeFrame = 0;
 
+    //Se calcula la longitud total de los datos con Padding
+    paddLength = (length % 16 == 0) ? length : (length + 16 - (length % 16)); // Se calcula el padding a añadir asegurandonos de que sea múltiplo de 16
+    if ((paddLength + 14 + CRC_LEN) < 64){//Se asegura que las tramas se envíe con al menos un tamaño de 64 bytes
+    	paddLength = 64 - (14 + CRC_LEN);
+    }
+
+    //Se copian las direcciones MAC de destino y fuente al frame
     memcpy(&g_frame[0], &ethConfig.macAddress_dest, 6U);
     memcpy(&g_frame[6], &ethConfig.macAddress_src, 6U);
+    //Se copia el tamaño de los datos incluyendo el padding en los últimos 2 bytes del Header
+    g_frame[12] = ((paddLength + CRC_LEN) >> 8) && 0xFFU;
+    g_frame[13] = (paddLength + CRC_LEN) & 0xFFU;
+//    Se copia el mensaje en el frame
+    strcpy(&g_frame[14], phrase);
 
-    g_frame[12] = (length >> 8) & 0xFFU; //Copiando tamaño de datos
-    g_frame[13] = length & 0xFFU; //Copiando tamaño de datos
+    /*Se añde el padding después del mensaje*/
+    for(count = length; count < paddLength; count++){
+    	g_frame[count + 14] = paddLength - length;
+    }
 
-    memcpy(&g_frame[14], phrase, length);
+    /*Encriptación de los datos con AES*/
+    AES_init_ctx_iv(&ctx, aes_key, aes_iv);
+    AES_CBC_encrypt_buffer(&ctx, &g_frame[14], paddLength);
+//    Se inicializa el CRC y se calcula el valor del CRC con los datos ya encriptados
+    InitCrc32(base, SEED);
+    CRC_WriteData(base, (uint8_t*)&g_frame[14], paddLength);
+    checksum32 = CRC_Get32bitResult(base);//Se guarda el valor del CRC en la variable checksum32
+
+    uint32_t* crcPtr = (uint32_t*)&g_frame[14 + paddLength];//Se asigna la posición donde se guardará el CRC en g_frame
+    *crcPtr = checksum32;//Se escribe el CRC al final de la trama
+//Se guarda el tamaño del frame para posteriormente ser devuelto
+    sizeFrame = paddLength + 14 + CRC_LEN;
+
+    return sizeFrame;
 }
 
 /*! @brief PHY status. */
@@ -168,7 +208,6 @@ void ethernet_Init(void){
 	/* Init the ENET. */
 	ENET_Init(EXAMPLE_ENET, &g_handle, &config, &buffConfig[0], &g_macAddr_src[0], EXAMPLE_CLOCK_FREQ);
 	ENET_ActiveRead(EXAMPLE_ENET);
-
 }
 
 void ethernet_Send(void){
@@ -176,25 +215,28 @@ void ethernet_Send(void){
 	bool link     = false;
 	bool tempLink = false;
 	const char *msg = phrase[testTxNum % NUM_PHRASES];
+	uint32_t frameLength = 0;
+
 	PRINTF("\r\nInicialization Send of Frames...\r\n");
-
+//Se obtiene el estado del enlace PHY
 	PHY_GetLinkStatus(&phyHandle, &link);
-
+//Si hubo algún cambio en el estado del enlace se mostrará en consola
 	 if (tempLink != link)
 	{
 		PRINTF("PHY link changed, link status = %u\r\n", link);
 		tempLink = link;
 	}
 
-	 ENET_BuildBroadCastFrame(msg);
-
+	 frameLength = ENET_BuildBroadCastFrame(msg); //Se construye la trama a enviar con la frase que corresponde
+//	 Verifica si hay mensajes por enviar
 	  if (testTxNum < ENET_TRANSMIT_DATA_NUM)
 	  {
 		  /* Send a multicast frame when the PHY is link up. */
 		  if (link){
 			  testTxNum++;
 			  SDK_DelayAtLeastUs(10000, SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY);
-			  if (kStatus_Success == ENET_SendFrame(EXAMPLE_ENET, &g_handle, &g_frame[0], ENET_DATA_LENGTH, 0, false, NULL))
+//			  Se envía el frame construido especificando el tamaño de este con la variable frameLength
+			  if (kStatus_Success == ENET_SendFrame(EXAMPLE_ENET, &g_handle, &g_frame[0], frameLength, 0, false, NULL))
 			  {
 				  PRINTF("The %d frame transmitted success: \"%s\"!\r\n", testTxNum, msg);
 			  }
@@ -212,39 +254,41 @@ void ethernet_Received(void){
 	bool tempLink = false;
 	bool link     = false;
 	uint32_t length        = 0;
-
+//Se obtiene el estado del enlace
 	PHY_GetLinkStatus(&phyHandle, &link);
+//	Si hubo algún cambio en el status se mostrará en la consola
 	if (tempLink != link)
 	{
 		PRINTF("PHY link changed, link status = %u\r\n", link);
 		tempLink = link;
 	}
-	/* Get the Frame size */
+	/* Obtiene el tamaño del frame recibido*/
 	status = ENET_GetRxFrameSize(&g_handle, &length, 0);
 	/* Call ENET_ReadFrame when there is a received frame. */
+	//Si la longitud es diferente de cero significa que ha recibido una trama
 	if (length != 0)
 	{
-		/* Received valid frame. Deliver the rx buffer with the size equal to length. */
-		uint8_t *data = (uint8_t *)malloc(length+1);
+		/* Asigna el tamaño del frame recibido a 'data' */
+		uint8_t *data = (uint8_t *)malloc(length);
 		if (data == NULL){
 			PRINTF("\r\nThere are not msgs in the buffer!!!\r\n");
 			return;
 		}
-
+		/* Lee la trama recibida y la almacena en el buffer 'data' */
 		status        = ENET_ReadFrame(EXAMPLE_ENET, &g_handle, data, length, 0, NULL);
 		if (status == kStatus_Success)
 		{
-			data[length] = '\0';
+//			data[length] = '\0';
 			PRINTF("\r\n>>> A frame received. the length %d ", length);
-			PRINTF(">>>Message: %s\r\n", data);
+			PRINTF(">>>Message: %s\r\n", data);//imprime el mensaje recibido
 			PRINTF(" Dest Address %02x:%02x:%02x:%02x:%02x:%02x Src Address %02x:%02x:%02x:%02x:%02x:%02x \r\n",
 				   data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9],
-				   data[10], data[11]);
+				   data[10], data[11]);//Imprime las direcciones MAC de origen y destino del frame recibido
 		}
 		else{
 			PRINTF("Error al leer el frame recibido.\r\n");
 		}
-		free(data);
+		free(data);//Se libera la memoria asignada para almacenar la trama
 	}
 	else if (status == kStatus_ENET_RxFrameError)
 	{
@@ -267,10 +311,10 @@ int main(void)
 	BOARD_InitHardware();
 
 	PRINTF("\r\nStart Inicialization of Ethernet...\r\n");
-
+// Se inicializa la interfaz ethernet para configurar Ethernet
 	ethernet_Init();
 
-	for(int i= 0; i<ENET_TRANSMIT_DATA_NUM; i++){
+	for(int i= 0; i<ENET_TRANSMIT_DATA_NUM; i++){//Se envía y recibe tramas
 
 		ethernet_Send();
 		ethernet_Received();
