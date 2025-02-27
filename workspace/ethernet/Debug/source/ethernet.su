@@ -4,8 +4,8 @@ C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:277:24:PH
 C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:292:24:PHY_GetLinkStatus	16	static
 C:\repos\embedded_practices\workspace\ethernet\component\phy/fsl_phy.h:309:24:PHY_GetLinkSpeedDuplex	24	static
 C:\repos\embedded_practices\workspace\ethernet\drivers/fsl_crc.h:169:24:CRC_Get32bitResult	16	static
-../source/ethernet.c:78:12:ENET_BuildBroadCastFrame	280	static
-../source/ethernet.c:130:6:ethernet_Init	136	static
-../source/ethernet.c:213:6:ethernet_Send	40	static
-../source/ethernet.c:251:6:ethernet_Received	112	static
+../source/ethernet.c:82:12:ENET_BuildBroadCastFrame	40	static
+../source/ethernet.c:127:6:ethernet_Init	136	static
+../source/ethernet.c:210:6:ethernet_Send	40	static
+../source/ethernet.c:248:6:ethernet_Received	112	static
 ../source/ethernet.c:307:5:main	16	static

@@ -71,6 +71,10 @@ ETHcfg ethConfig = {MAC_ADDRESS_dest, MAC_ADDRESS_src};//Configuración ethernet
 
 uint32_t testTxNum     = 0;
 CRC_Type *base = CRC_ENGINE;
+
+struct AES_ctx ctx;
+uint8_t aes_key[] = "My16byteKey00000";//Clave AES de 16 bytes
+uint8_t aes_iv[] = "My16byteIV000000";//Vector de Inicialización AES de 16 bytes.
 /*******************************************************************************
  * Code
  ******************************************************************************/
@@ -80,18 +84,13 @@ static int ENET_BuildBroadCastFrame(const char *phrase)
     uint32_t count  = 0;
     uint32_t length = strlen(phrase); //Longitud de la frase
     uint32_t paddLength = 0;
-    struct AES_ctx ctx;
-    uint8_t aes_key[] = "My16byteKey00000";//Clave AES de 16 bytes
-    uint8_t aes_iv[] = "My16byteIV000000";//Vector de Inicialización AES de 16 bytes.
     uint32_t checksum32 = 0;
     uint32_t sizeFrame = 0;
-
     //Se calcula la longitud total de los datos con Padding
     paddLength = (length % 16 == 0) ? length : (length + 16 - (length % 16)); // Se calcula el padding a añadir asegurandonos de que sea múltiplo de 16
     if ((paddLength + 14 + CRC_LEN) < 64){//Se asegura que las tramas se envíe con al menos un tamaño de 64 bytes
     	paddLength = 64 - (14 + CRC_LEN);
     }
-
     //Se copian las direcciones MAC de destino y fuente al frame
     memcpy(&g_frame[0], &ethConfig.macAddress_dest, 6U);
     memcpy(&g_frame[6], &ethConfig.macAddress_src, 6U);
@@ -105,7 +104,6 @@ static int ENET_BuildBroadCastFrame(const char *phrase)
     for(count = length; count < paddLength; count++){
     	g_frame[count + 14] = paddLength - length;
     }
-
     /*Encriptación de los datos con AES*/
     AES_init_ctx_iv(&ctx, aes_key, aes_iv);
     AES_CBC_encrypt_buffer(&ctx, &g_frame[14], paddLength);
@@ -118,7 +116,6 @@ static int ENET_BuildBroadCastFrame(const char *phrase)
     *crcPtr = checksum32;//Se escribe el CRC al final de la trama
 //Se guarda el tamaño del frame para posteriormente ser devuelto
     sizeFrame = paddLength + 14 + CRC_LEN;
-
     return sizeFrame;
 }
 
@@ -276,6 +273,9 @@ void ethernet_Received(void){
 		}
 		/* Lee la trama recibida y la almacena en el buffer 'data' */
 		status        = ENET_ReadFrame(EXAMPLE_ENET, &g_handle, data, length, 0, NULL);
+		/*desencriptación de los datos con AES*/
+		AES_init_ctx_iv(&ctx, aes_key, aes_iv);
+		AES_CBC_decrypt_buffer(&ctx, data, length);
 		if (status == kStatus_Success)
 		{
 //			data[length] = '\0';
