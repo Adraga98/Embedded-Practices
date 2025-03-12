@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="u32length"/>
+		<item key="selection" value="publish_gasTankLevel"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="u16length"/>
-			<item value="g_frame"/>
-			<item value="g_macAddr"/>
-			<item value="ENET_BuildBroadCastFrame"/>
-			<item value="LWIP_DNS"/>
-			<item value="LWIP_DN"/>
-			<item value="LWIP_D"/>
-			<item value="INIT_THREAD_STACKSIZE"/>
-			<item value="nextState"/>
-			<item value="stateCurr"/>
-			<item value="BOARD_LED_GPIO"/>
-			<item value="g_ButtonPress"/>
-			<item value=" = false;"/>
-			<item value="BOARD_SW_IRQ_HANDLER"/>
-			<item value="BOARD_SW_IRQ"/>
+			<item value="gasTankLevel"/>
+			<item value="sys_timeout"/>
+			<item value="updateData"/>
+			<item value="lightCtrl"/>
+			<item value="Function called without core lock"/>
+			<item value="sensorLight"/>
+			<item value="topicCurrent"/>
+			<item value="myDomoticHome/sensor/switchLight"/>
+			<item value="topCurr"/>
+			<item value="APP_BOARD_TEST_LED_PIN"/>
+			<item value="mqtt_incoming_data_cb"/>
+			<item value="app_thread"/>
+			<item value="publish_message"/>
+			<item value="received"/>
+			<item value="mqtt_incoming_publish_cb"/>
 		</list>
 		<list key="replacehistory">
+			<item value="publish_gasTankLevel"/>
+			<item value="updateData"/>
+			<item value="topicCurrent"/>
 			<item value="u32length"/>
 			<item value="g_macAddr_src"/>
 			<item value="curr_State"/>
@@ -37,14 +40,11 @@
 			<item value="BOARD_LED_GPIO_PIN_RED"/>
 			<item value="BOARD_LED_GPIO_RED_PIN"/>
 			<item value="BOARD_LED_GPIO_RED"/>
-			<item value="BOARD_SW02_GPIO_PIN"/>
-			<item value="BOARD_SW02_GPIO _PIN"/>
-			<item value="BOARD_SW02_GPIO "/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="965"/>
-		<item key="DIALOG_Y_ORIGIN" value="134"/>
+		<item key="DIALOG_X_ORIGIN" value="966"/>
+		<item key="DIALOG_Y_ORIGIN" value="271"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

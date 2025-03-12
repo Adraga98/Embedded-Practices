@@ -20,6 +20,7 @@
 #include "lwip/apps/mqtt.h"
 #include "lwip/tcpip.h"
 
+#include <stdio.h>
 // FIXME cleanup
 
 /*******************************************************************************
@@ -49,21 +50,27 @@
 #define APP_THREAD_PRIO DEFAULT_THREAD_PRIO
 
 #define sensorLight "myDomoticHome/sensor/switchLight"
+
 #define actuatorLight "myDomoticHome/actuator/light"
+#define actuatorGasTank "myDomoticHome/actuator/gasTank"
 
 #define lightOn "1"
 #define lightOff "0"
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
-static void lightCtrl(void);
+static void updateData(void);
+static void publish_gasTankLevel(void *ctx);
 static void connect_to_mqtt(void *ctx);
 
 /*******************************************************************************
  * Variables
  ******************************************************************************/
+static int gasLevel = 75;// Initial value of gasTank
 const char *lightState = lightOff;
+
 char topicCurrent[100];
+char payGas[10];
 
 /*! @brief MQTT client data. */
 static mqtt_client_t *mqtt_client;
@@ -158,7 +165,7 @@ static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t f
     if (flags & MQTT_DATA_FLAG_LAST)
     {
         PRINTF("\"\r\n");
-        lightCtrl();
+        updateData();
     }
 
 }
@@ -273,6 +280,7 @@ static void mqtt_message_published_cb(void *arg, err_t err)
 static void publish_message(void *ctx)
 {
     static const char *topic   = "myDomoticHome/actuator/light";
+//    static const char *topic2   = "myDomoticHome/actuator/gasTank";
    // static char const *message = *lightState;
 
     LWIP_UNUSED_ARG(ctx);
@@ -280,6 +288,7 @@ static void publish_message(void *ctx)
     PRINTF("Going to publish to the topic \"%s\"...\r\n", topic);
 
     mqtt_publish(mqtt_client, topic, lightState, strlen(lightState), 1, 0, mqtt_message_published_cb, (void *)topic);
+//    mqtt_publish(mqtt_client, topic2, payGas, strlen(payGas), 1, 0, mqtt_message_published_cb, (void *)topic2);
 }
 
 /*!
@@ -340,6 +349,19 @@ static void app_thread(void *arg)
         }
 
         sys_msleep(1000U);
+    }
+
+    for (i = 0; i < 15;)
+    {
+		if(connected){
+			err = tcpip_callback(publish_gasTankLevel, NULL);
+			if (err != ERR_OK)
+			{
+				PRINTF("Failed to invoke publishing of a message on the tcpip_thread: %d.\r\n", err);
+			}
+			i++;
+		}
+		sys_msleep(5000U);
     }
 
     vTaskDelete(NULL);
@@ -426,6 +448,25 @@ void mqtt_freertos_run_thread(struct netif *netif)
     }
 }
 
-static void lightCtrl(void){
+static void updateData(void){
 	tcpip_callback(publish_message, NULL);
+}
+
+static void publish_gasTankLevel(void *ctx){
+
+	LWIP_UNUSED_ARG(ctx);
+
+	int change = (rand()%7)-3;
+	gasLevel += change;
+
+	if(gasLevel < 1){
+		gasLevel = 1;
+	}
+	if(gasLevel > 100){
+		gasLevel = 100;
+	}
+	snprintf(payGas, sizeof(payGas), "%d", gasLevel);
+
+	PRINTF("Publishing Level of Gas: %s\r\n", payGas);
+	mqtt_publish(mqtt_client, actuatorGasTank, payGas, strlen(payGas), 1, 0, mqtt_message_published_cb, (void *)actuatorGasTank);
 }

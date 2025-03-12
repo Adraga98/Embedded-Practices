@@ -6227,3 +6227,81 @@ java.lang.Exception: No symbol "topic" in current context.
 
 !ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 02:00:30.967
 !MESSAGE Telnet session connected on port 2333->54525 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 02:58:43.219
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 02:58:43.397
+!MESSAGE Telnet session connected on port 2333->49387 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:11:54.059
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:11:54.415
+!MESSAGE Telnet session connected on port 2333->50493 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:16:21.204
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:16:21.493
+!MESSAGE Telnet session connected on port 2333->51038 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:21:09.627
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:21:09.962
+!MESSAGE Telnet session connected on port 2333->52048 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:24:08.607
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:24:08.912
+!MESSAGE Telnet session connected on port 2333->52782 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:31:46.647
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:31:47.048
+!MESSAGE Telnet session connected on port 2333->53749 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:43:29.045
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:43:29.310
+!MESSAGE Telnet session connected on port 2333->54859 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:44:33.349
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:44:33.761
+!MESSAGE Telnet session connected on port 2333->55875 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:45:37.534
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:45:37.943
+!MESSAGE Telnet session connected on port 2333->56812 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:50:57.815
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:50:58.156
+!MESSAGE Telnet session connected on port 2333->57737 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:53:08.552
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:53:08.914
+!MESSAGE Telnet session connected on port 2333->55308 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:54:44.249
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:54:44.588
+!MESSAGE Telnet session connected on port 2333->56275 @ 127.0.0.1
+
+!ENTRY com.crt.utils 1 0 2025-03-12 03:57:24.179
+!MESSAGE Connected to 127.0.0.1 on port 2332.
+
+!ENTRY com.nxp.mcuxpresso.core.debug 1 0 2025-03-12 03:57:24.533
+!MESSAGE Telnet session connected on port 2333->57313 @ 127.0.0.1

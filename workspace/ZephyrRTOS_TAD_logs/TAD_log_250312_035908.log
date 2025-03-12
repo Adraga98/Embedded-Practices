@@ -1,0 +1,11 @@
+"Task Aware Debugger for GDB" version 24.12.0 (202407110909)
+Copyright 2016-2023 NXP
+==================================
+03:57:18.674 INFO: [ZephyrRTOS] .config file could not be read [C:\repos\embedded_practices\workspace\mqtt_FreeRTOS_Eth\Debug\.config (El sistema no puede encontrar el archivo especificado)]
+03:57:18.674 INFO: [TadModel] DSF session ID 92 has started.
+03:57:21.927 INFO: [TadState] TAD state changed: DEBUG_STARTED -> DEBUG_INIT_0 (SUSPENDED, USER_REQUEST)
+03:57:24.169 INFO: [TadState] TAD state changed: DEBUG_INIT_0 -> DEBUG_INIT_1 (RESUMED, USER_REQUEST)
+03:57:24.197 INFO: [TadState] TAD state changed: DEBUG_INIT_1 -> DEBUG_SUSPENDED (SUSPENDED, BREAKPOINT)
+03:57:54.849 INFO: [TadState] TAD state changed: DEBUG_SUSPENDED -> DEBUG_RESUMED (RESUMED, USER_REQUEST)
+03:59:07.157 INFO: [TadState] TAD state changed: DEBUG_RESUMED -> READY (SUSPENDED, SIGNAL)
+03:59:08.179 INFO: [TadModel] DSF session ID 92 has ended.
