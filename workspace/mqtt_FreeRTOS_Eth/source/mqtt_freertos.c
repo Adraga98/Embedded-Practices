@@ -28,7 +28,7 @@
 
 /*! @brief MQTT server host name or IP address. */
 #ifndef EXAMPLE_MQTT_SERVER_HOST
-#define EXAMPLE_MQTT_SERVER_HOST "broker.hivemq.com"
+#define EXAMPLE_MQTT_SERVER_HOST "test.mosquitto.org"
 #endif
 
 /*! @brief MQTT server port number. */
@@ -48,15 +48,22 @@
 /*! @brief Priority of the temporary initialization thread. */
 #define APP_THREAD_PRIO DEFAULT_THREAD_PRIO
 
+#define sensorLight "myDomoticHome/sensor/switchLight"
+#define actuatorLight "myDomoticHome/actuator/light"
+
+#define lightOn "1"
+#define lightOff "0"
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
-
+static void lightCtrl(void);
 static void connect_to_mqtt(void *ctx);
 
 /*******************************************************************************
  * Variables
  ******************************************************************************/
+const char *lightState = lightOff;
+char topicCurrent[100];
 
 /*! @brief MQTT client data. */
 static mqtt_client_t *mqtt_client;
@@ -112,7 +119,8 @@ static void mqtt_topic_subscribed_cb(void *arg, err_t err)
 static void mqtt_incoming_publish_cb(void *arg, const char *topic, u32_t tot_len)
 {
     LWIP_UNUSED_ARG(arg);
-
+    strcpy(topicCurrent, topic);
+//    topicCurrent = *topic;
     PRINTF("Received %u bytes from the topic \"%s\": \"", tot_len, topic);
 }
 
@@ -124,23 +132,35 @@ static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t f
     int i;
 
     LWIP_UNUSED_ARG(arg);
+    char payload[2] = {0}; //Buffer to store the received payload
+    if(len >= sizeof(payload)){
+    	PRINTF("Payload too long\r\n");
+    	return;
+    }
+    memcpy(payload, data, len);//Copy the payload into a local buffer
+    payload[len] = '\0'; //Ensure null-termination
 
-    for (i = 0; i < len; i++)
-    {
-        if (isprint(data[i]))
-        {
-            PRINTF("%c", (char)data[i]);
-        }
-        else
-        {
-            PRINTF("\\x%02x", data[i]);
-        }
+    if (strcmp(topicCurrent, sensorLight) == 0) {
+    	if (strcmp(payload, lightOn) == 0){
+    		lightState = "1";
+    		PRINTF("%c", (char)data[i]);
+    	}
+    	else if(strcmp(payload, lightOff) == 0){
+    		lightState = "0";
+    		PRINTF("%c", (char)data[i]);
+    	}
+    	else{
+    		PRINTF("Unrecognized payload: %s\r\n", payload);
+    		return;
+    	}
     }
 
     if (flags & MQTT_DATA_FLAG_LAST)
     {
         PRINTF("\"\r\n");
+        lightCtrl();
     }
+
 }
 
 /*!
@@ -148,8 +168,8 @@ static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t f
  */
 static void mqtt_subscribe_topics(mqtt_client_t *client)
 {
-    static const char *topics[] = {"lwip_topic/#", "lwip_other/#"};
-    int qos[]                   = {0, 1};
+    static const char *topics[] = {"myDomoticHome/sensor/switchLight", "myDomoticHome/sensor/waterPump"};
+    int qos[]                   = {1, 1};
     err_t err;
     int i;
 
@@ -252,14 +272,14 @@ static void mqtt_message_published_cb(void *arg, err_t err)
  */
 static void publish_message(void *ctx)
 {
-    static const char *topic   = "lwip_topic/100";
-    static const char *message = "message from board";
+    static const char *topic   = "myDomoticHome/actuator/light";
+   // static char const *message = *lightState;
 
     LWIP_UNUSED_ARG(ctx);
 
     PRINTF("Going to publish to the topic \"%s\"...\r\n", topic);
 
-    mqtt_publish(mqtt_client, topic, message, strlen(message), 1, 0, mqtt_message_published_cb, (void *)topic);
+    mqtt_publish(mqtt_client, topic, lightState, strlen(lightState), 1, 0, mqtt_message_published_cb, (void *)topic);
 }
 
 /*!
@@ -404,4 +424,8 @@ void mqtt_freertos_run_thread(struct netif *netif)
     {
         LWIP_ASSERT("mqtt_freertos_start_thread(): Task creation failed.", 0);
     }
+}
+
+static void lightCtrl(void){
+	tcpip_callback(publish_message, NULL);
 }
