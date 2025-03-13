@@ -93,7 +93,7 @@
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
-static void updateData(void);
+static void publish_updateData(void);
 static void callFunctions(void);
 static void lightCtrl(char *payload, u16_t len);
 static void gasCtrl(void);
@@ -209,7 +209,7 @@ static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t f
     if (flags & MQTT_DATA_FLAG_LAST)
     {
         PRINTF("\"\r\n");
-        updateData();
+        publish_updateData();
     }
 
 }
@@ -326,16 +326,26 @@ static void publish_message(void *ctx)
 	callFunctions();
     LWIP_UNUSED_ARG(ctx);
 
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", sensorWaterTank);
+    mqtt_publish(mqtt_client, sensorWaterTank, payWater, strlen(payWater), 2, 0, mqtt_message_published_cb, (void *)sensorWaterTank);
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", sensorGasTank);
+    mqtt_publish(mqtt_client, sensorGasTank, payGas, strlen(payGas), 2, 0, mqtt_message_published_cb, (void *)sensorGasTank);
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", actuatorWaterPump);
+    mqtt_publish(mqtt_client, actuatorWaterPump, payPump, strlen(payPump), 2, 0, mqtt_message_published_cb, (void *)actuatorWaterPump);
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", sensorAirQ);
+    mqtt_publish(mqtt_client, sensorAirQ, airQ, strlen(airQ), 2, 0, mqtt_message_published_cb, (void *)sensorAirQ);
+}
+
+
+/*!
+ * @brief Publishes a message of subscribed topics. To be called on tcpip_thread.
+ */
+static void publish_msgOfSuscribedTopics(void *ctx)
+{
+    LWIP_UNUSED_ARG(ctx);
+
     PRINTF("Going to publish to the topic \"%s\"...\r\n", actuatorLight);
     mqtt_publish(mqtt_client, actuatorLight, lightState, strlen(lightState), 1, 0, mqtt_message_published_cb, (void *)actuatorLight);
-    PRINTF("Going to publish to the topic \"%s\"...\r\n", sensorWaterTank);
-    mqtt_publish(mqtt_client, sensorWaterTank, payWater, strlen(payWater), 1, 0, mqtt_message_published_cb, (void *)sensorWaterTank);
-    PRINTF("Going to publish to the topic \"%s\"...\r\n", sensorGasTank);
-    mqtt_publish(mqtt_client, sensorGasTank, payGas, strlen(payGas), 1, 0, mqtt_message_published_cb, (void *)sensorGasTank);
-    PRINTF("Going to publish to the topic \"%s\"...\r\n", actuatorWaterPump);
-    mqtt_publish(mqtt_client, actuatorWaterPump, payPump, strlen(payPump), 1, 0, mqtt_message_published_cb, (void *)actuatorWaterPump);
-    PRINTF("Going to publish to the topic \"%s\"...\r\n", sensorAirQ);
-    mqtt_publish(mqtt_client, sensorAirQ, airQ, strlen(airQ), 1, 0, mqtt_message_published_cb, (void *)sensorAirQ);
     PRINTF("Going to publish to the topic \"%s\"...\r\n", actuatorDoorLock);
     mqtt_publish(mqtt_client, actuatorDoorLock, lockDoor, strlen(lockDoor), 1, 0, mqtt_message_published_cb, (void *)actuatorDoorLock);
     PRINTF("Going to publish to the topic \"%s\"...\r\n", actuatorFan);
@@ -387,21 +397,18 @@ static void app_thread(void *arg)
     }
 
     /* Publish some messages */
-    for (i = 0; i < 5;)
+    while(1)
     {
-        if (connected)
-        {
-            err = tcpip_callback(publish_message, NULL);
-            if (err != ERR_OK)
-            {
-                PRINTF("Failed to invoke publishing of a message on the tcpip_thread: %d.\r\n", err);
-            }
-            i++;
-        }
-
-        sys_msleep(5000U);
-    }
-
+    	if (connected)
+    	{
+    		err = tcpip_callback(publish_message, NULL);
+			if (err != ERR_OK)
+			{
+				PRINTF("Failed to invoke publishing of a message on the tcpip_thread: %d.\r\n", err);
+			}
+		}
+    	sys_msleep(5000U);
+	}
     vTaskDelete(NULL);
 }
 
@@ -486,8 +493,8 @@ void mqtt_freertos_run_thread(struct netif *netif)
     }
 }
 
-static void updateData(void){
-	tcpip_callback(publish_message, NULL);
+static void publish_updateData(void){
+	tcpip_callback(publish_msgOfSuscribedTopics, NULL);
 }
 
 
@@ -622,6 +629,10 @@ static void fanCtrl(char *payload, u16_t len){
 	else if(strcmp(payload, level3) == 0){
 		levelFan = "3";
 		PRINTF("%c",level3);
+	}
+	else if(strcmp(payload, level4) == 0){
+		levelFan = "4";
+		PRINTF("%c",level4);
 	}
 	else if(strcmp(payload, level5) == 0){
 		levelFan = "5";
