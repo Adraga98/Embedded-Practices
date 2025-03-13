@@ -29,7 +29,7 @@
 
 /*! @brief MQTT server host name or IP address. */
 #ifndef EXAMPLE_MQTT_SERVER_HOST
-#define EXAMPLE_MQTT_SERVER_HOST "test.mosquitto.org"
+#define EXAMPLE_MQTT_SERVER_HOST "broker.emqx.io"
 #endif
 
 /*! @brief MQTT server port number. */
@@ -49,28 +49,77 @@
 /*! @brief Priority of the temporary initialization thread. */
 #define APP_THREAD_PRIO DEFAULT_THREAD_PRIO
 
-#define sensorLight "myDomoticHome/sensor/switchLight"
+#define sensorLight "myDomoticHome/sensor/switchLight" //subs
+#define actuatorLight "myDomoticHome/actuator/light"	//publish
 
-#define actuatorLight "myDomoticHome/actuator/light"
-#define actuatorGasTank "myDomoticHome/actuator/gasTank"
+#define sensorDoorLock "myDomoticHome/sensor/doorLock"  //subs
+#define actuatorDoorLock "myDomoticHome/actuator/doorLock"  //pub
+
+#define sensorWaterTank "myDomoticHome/sensor/waterTank" //publish
+#define actuatorWaterPump "myDomoticHome/actuator/waterPump" //publish
+
+#define sensorAirQ "myDomoticHome/sensor/airQ" //publish
+#define sensorGasTank "myDomoticHome/sensor/gasTank" //publish
+
+#define sensorFan "myDomoticHome/sensor/sliderFan"	//subs
+#define actuatorFan "myDomoticHome/actuator/fan"	//publish
+
+#define level0	"0"
+#define level1	"1"
+#define level2	"2"
+#define level3	"3"
+#define level4	"4"
+#define level5	"5"
+
+#define empty 0
+#define minLevel 300
+#define maxLevel 600
+#define full 100
+
+#define good 0
+#define regular 50
+#define bad 100
+#define veryBad 150
+#define dangerous 200
 
 #define lightOn "1"
 #define lightOff "0"
+
+#define pumpOn "1"
+#define pumpOff "0"
+
+#define unlock "1"
+#define lock "0"
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
 static void updateData(void);
-static void publish_gasTankLevel(void *ctx);
+static void callFunctions(void);
+static void lightCtrl(char *payload, u16_t len);
+static void gasCtrl(void);
+static void waterCtrl(void);
+static void airQuality(void);
+static void doorCtrl(char *payload, u16_t len);
+static void fanCtrl(char *payload, u16_t len);
+
 static void connect_to_mqtt(void *ctx);
 
 /*******************************************************************************
  * Variables
  ******************************************************************************/
-static int gasLevel = 75;// Initial value of gasTank
-const char *lightState = lightOff;
-
 char topicCurrent[100];
+
+static int volumeWater = 200;// Initial value of gasTank
+static int gasLevel = 45;// Initial value of gasTank
+
+const char *lightState = lightOff;
+const char *levelFan = level0;
+const char *lockDoor = unlock;
+const char *airQ = level1;
+
 char payGas[10];
+char payWater[10];
+char payPump[10];
 
 /*! @brief MQTT client data. */
 static mqtt_client_t *mqtt_client;
@@ -127,7 +176,6 @@ static void mqtt_incoming_publish_cb(void *arg, const char *topic, u32_t tot_len
 {
     LWIP_UNUSED_ARG(arg);
     strcpy(topicCurrent, topic);
-//    topicCurrent = *topic;
     PRINTF("Received %u bytes from the topic \"%s\": \"", tot_len, topic);
 }
 
@@ -136,30 +184,26 @@ static void mqtt_incoming_publish_cb(void *arg, const char *topic, u32_t tot_len
  */
 static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t flags)
 {
-    int i;
-
     LWIP_UNUSED_ARG(arg);
+
     char payload[2] = {0}; //Buffer to store the received payload
+
     if(len >= sizeof(payload)){
     	PRINTF("Payload too long\r\n");
     	return;
     }
+
     memcpy(payload, data, len);//Copy the payload into a local buffer
     payload[len] = '\0'; //Ensure null-termination
 
     if (strcmp(topicCurrent, sensorLight) == 0) {
-    	if (strcmp(payload, lightOn) == 0){
-    		lightState = "1";
-    		PRINTF("%c", (char)data[i]);
-    	}
-    	else if(strcmp(payload, lightOff) == 0){
-    		lightState = "0";
-    		PRINTF("%c", (char)data[i]);
-    	}
-    	else{
-    		PRINTF("Unrecognized payload: %s\r\n", payload);
-    		return;
-    	}
+    	lightCtrl(payload,len);
+    }
+    if (strcmp(topicCurrent, sensorDoorLock) == 0) {
+    	doorCtrl(payload, len);
+    }
+    if (strcmp(topicCurrent, sensorFan) == 0) {
+    	fanCtrl(payload, len);
     }
 
     if (flags & MQTT_DATA_FLAG_LAST)
@@ -175,8 +219,8 @@ static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t f
  */
 static void mqtt_subscribe_topics(mqtt_client_t *client)
 {
-    static const char *topics[] = {"myDomoticHome/sensor/switchLight", "myDomoticHome/sensor/waterPump"};
-    int qos[]                   = {1, 1};
+    static const char *topics[] = {sensorLight, sensorDoorLock, sensorFan};
+    int qos[]                   = {1, 1, 1};
     err_t err;
     int i;
 
@@ -279,16 +323,23 @@ static void mqtt_message_published_cb(void *arg, err_t err)
  */
 static void publish_message(void *ctx)
 {
-    static const char *topic   = "myDomoticHome/actuator/light";
-//    static const char *topic2   = "myDomoticHome/actuator/gasTank";
-   // static char const *message = *lightState;
-
+	callFunctions();
     LWIP_UNUSED_ARG(ctx);
 
-    PRINTF("Going to publish to the topic \"%s\"...\r\n", topic);
-
-    mqtt_publish(mqtt_client, topic, lightState, strlen(lightState), 1, 0, mqtt_message_published_cb, (void *)topic);
-//    mqtt_publish(mqtt_client, topic2, payGas, strlen(payGas), 1, 0, mqtt_message_published_cb, (void *)topic2);
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", actuatorLight);
+    mqtt_publish(mqtt_client, actuatorLight, lightState, strlen(lightState), 1, 0, mqtt_message_published_cb, (void *)actuatorLight);
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", sensorWaterTank);
+    mqtt_publish(mqtt_client, sensorWaterTank, payWater, strlen(payWater), 1, 0, mqtt_message_published_cb, (void *)sensorWaterTank);
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", sensorGasTank);
+    mqtt_publish(mqtt_client, sensorGasTank, payGas, strlen(payGas), 1, 0, mqtt_message_published_cb, (void *)sensorGasTank);
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", actuatorWaterPump);
+    mqtt_publish(mqtt_client, actuatorWaterPump, payPump, strlen(payPump), 1, 0, mqtt_message_published_cb, (void *)actuatorWaterPump);
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", sensorAirQ);
+    mqtt_publish(mqtt_client, sensorAirQ, airQ, strlen(airQ), 1, 0, mqtt_message_published_cb, (void *)sensorAirQ);
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", actuatorDoorLock);
+    mqtt_publish(mqtt_client, actuatorDoorLock, lockDoor, strlen(lockDoor), 1, 0, mqtt_message_published_cb, (void *)actuatorDoorLock);
+    PRINTF("Going to publish to the topic \"%s\"...\r\n", actuatorFan);
+    mqtt_publish(mqtt_client, actuatorFan, levelFan, strlen(levelFan), 1, 0, mqtt_message_published_cb, (void *)actuatorFan);
 }
 
 /*!
@@ -348,20 +399,7 @@ static void app_thread(void *arg)
             i++;
         }
 
-        sys_msleep(1000U);
-    }
-
-    for (i = 0; i < 15;)
-    {
-		if(connected){
-			err = tcpip_callback(publish_gasTankLevel, NULL);
-			if (err != ERR_OK)
-			{
-				PRINTF("Failed to invoke publishing of a message on the tcpip_thread: %d.\r\n", err);
-			}
-			i++;
-		}
-		sys_msleep(5000U);
+        sys_msleep(5000U);
     }
 
     vTaskDelete(NULL);
@@ -452,11 +490,25 @@ static void updateData(void){
 	tcpip_callback(publish_message, NULL);
 }
 
-static void publish_gasTankLevel(void *ctx){
 
-	LWIP_UNUSED_ARG(ctx);
+static void lightCtrl(char *payload, u16_t len){
 
-	int change = (rand()%7)-3;
+	if (strcmp(payload, lightOn) == 0){
+		lightState = "1";
+		PRINTF("%c",lightOn);
+	}
+	else if(strcmp(payload, lightOff) == 0){
+		lightState = "0";
+		PRINTF("%c",lightOff);
+	}
+	else{
+		PRINTF("Unrecognized payload: %s\r\n", payload);
+		return;
+	}
+}
+static void gasCtrl(void){
+
+	int change = (rand()%25)-10;
 	gasLevel += change;
 
 	if(gasLevel < 1){
@@ -468,5 +520,121 @@ static void publish_gasTankLevel(void *ctx){
 	snprintf(payGas, sizeof(payGas), "%d", gasLevel);
 
 	PRINTF("Publishing Level of Gas: %s\r\n", payGas);
-	mqtt_publish(mqtt_client, actuatorGasTank, payGas, strlen(payGas), 1, 0, mqtt_message_published_cb, (void *)actuatorGasTank);
+}
+
+static void waterCtrl(void){
+
+	int sensorValue = rand()%1001;
+	int change = (rand()%21) - 10; //-10 y 10
+	int statePump = 0;
+
+	sensorValue += change;
+
+	if(sensorValue < 0){
+		sensorValue = 0;
+	}
+	if(sensorValue > 1000){
+		sensorValue = 1000;
+	}
+
+	if(sensorValue>= empty && sensorValue <= minLevel){
+		statePump = 1;
+	}
+	else if(sensorValue> minLevel && sensorValue <= maxLevel){
+		statePump = 1;
+	}else if(sensorValue > maxLevel && sensorValue <= full){
+		statePump = 0;
+	}
+	else{
+		//Nothing to do
+	}
+	snprintf(payPump, sizeof(payPump), "%d", statePump);
+	snprintf(payWater, sizeof(payWater), "%d", sensorValue);
+
+	PRINTF("Publishing Level of Water: %s\r\n", payWater);
+}
+
+static void airQuality(void){
+	int sensorValue = (rand()%501);
+	int change = (rand()%21) - 10; //-10 y 10
+	int quality = 0;
+
+	sensorValue += change;
+
+	if(sensorValue < 0){
+		sensorValue = 0;
+	}
+	if(sensorValue > 500){
+		sensorValue = 500;
+	}
+
+	if(sensorValue>= good && sensorValue <= regular){
+		airQ = level1;
+	}
+	else if(sensorValue> regular && sensorValue <= bad){
+		airQ = level2;
+	}
+	else if(sensorValue > bad && sensorValue <= veryBad){
+		airQ = level3;
+	}
+	else if(sensorValue > veryBad && sensorValue <= dangerous){
+		airQ = level4;
+	}
+	else if(sensorValue > dangerous && sensorValue <= 500){
+		airQ = level5;
+
+	}
+	else{
+		//Nothing to do
+	}
+
+	PRINTF("Publishing Level of AirQuality: %s\r\n", airQ);
+
+}
+
+static void doorCtrl(char *payload, u16_t len){
+	if (strcmp(payload, lock) == 0){
+		lockDoor = "0";
+		PRINTF("%c",lock);
+	}
+	else if(strcmp(payload, unlock) == 0){
+		lockDoor = "1";
+		PRINTF("%c",unlock);
+	}
+	else{
+		PRINTF("Unrecognized payload: %s\r\n", payload);
+		return;
+	}
+}
+static void fanCtrl(char *payload, u16_t len){
+	if (strcmp(payload, level0) == 0){
+		levelFan = "0";
+		PRINTF("%c",level0);
+	}
+	else if(strcmp(payload, level1) == 0){
+		levelFan = "1";
+		PRINTF("%c",level1);
+	}
+	else if(strcmp(payload, level2) == 0){
+		levelFan = "2";
+		PRINTF("%c",level2);
+	}
+	else if(strcmp(payload, level3) == 0){
+		levelFan = "3";
+		PRINTF("%c",level3);
+	}
+	else if(strcmp(payload, level5) == 0){
+		levelFan = "5";
+		PRINTF("%c",level5);
+	}
+	else{
+		PRINTF("Unrecognized payload: %s\r\n", payload);
+		return;
+	}
+}
+
+static void callFunctions(void){
+	gasCtrl();
+	waterCtrl();
+	airQuality();
 }

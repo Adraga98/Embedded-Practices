@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="publish_gasTankLevel"/>
+		<item key="selection" value="sensorGasTank"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="actuatorGasTank"/>
+			<item value="publish_gasTankLevel"/>
+			<item value="publishAirQuality"/>
+			<item value="LWIPOPTS"/>
+			<item value="gasLevel"/>
+			<item value="Getting IP address from DHCP..."/>
 			<item value="gasTankLevel"/>
 			<item value="sys_timeout"/>
 			<item value="updateData"/>
@@ -17,14 +23,12 @@
 			<item value="topicCurrent"/>
 			<item value="myDomoticHome/sensor/switchLight"/>
 			<item value="topCurr"/>
-			<item value="APP_BOARD_TEST_LED_PIN"/>
-			<item value="mqtt_incoming_data_cb"/>
-			<item value="app_thread"/>
-			<item value="publish_message"/>
-			<item value="received"/>
-			<item value="mqtt_incoming_publish_cb"/>
 		</list>
 		<list key="replacehistory">
+			<item value="sensorGasTank"/>
+			<item value="gasCtrl"/>
+			<item value="waterCtrl"/>
+			<item value="MYDOMOTICHOME"/>
 			<item value="publish_gasTankLevel"/>
 			<item value="updateData"/>
 			<item value="topicCurrent"/>
@@ -36,10 +40,6 @@
 			<item value="g_Button_A"/>
 			<item value="BOARD_SW2_IRQ_HANDLER"/>
 			<item value="BOARD_SW2_IRQ"/>
-			<item value="BOARD_SW2_NAME"/>
-			<item value="BOARD_LED_GPIO_PIN_RED"/>
-			<item value="BOARD_LED_GPIO_RED_PIN"/>
-			<item value="BOARD_LED_GPIO_RED"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
