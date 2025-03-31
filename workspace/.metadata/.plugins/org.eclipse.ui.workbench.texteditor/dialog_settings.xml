@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="sensorGasTank"/>
+		<item key="selection" value="publish_updateData"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="updateData"/>
 			<item value="actuatorGasTank"/>
 			<item value="publish_gasTankLevel"/>
 			<item value="publishAirQuality"/>
@@ -16,7 +17,6 @@
 			<item value="Getting IP address from DHCP..."/>
 			<item value="gasTankLevel"/>
 			<item value="sys_timeout"/>
-			<item value="updateData"/>
 			<item value="lightCtrl"/>
 			<item value="Function called without core lock"/>
 			<item value="sensorLight"/>
@@ -25,6 +25,7 @@
 			<item value="topCurr"/>
 		</list>
 		<list key="replacehistory">
+			<item value="publish_updateData"/>
 			<item value="sensorGasTank"/>
 			<item value="gasCtrl"/>
 			<item value="waterCtrl"/>
@@ -39,7 +40,6 @@
 			<item value="BOARD_LED_BLUE "/>
 			<item value="g_Button_A"/>
 			<item value="BOARD_SW2_IRQ_HANDLER"/>
-			<item value="BOARD_SW2_IRQ"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
