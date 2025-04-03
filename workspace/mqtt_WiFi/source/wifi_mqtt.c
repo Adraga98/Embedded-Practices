@@ -34,11 +34,11 @@
  ******************************************************************************/
 
 #ifndef AP_SSID
-#define AP_SSID "my_network"
+#define AP_SSID "Totalplay-A3AA"
 #endif
 
 #ifndef AP_PASSWORD
-#define AP_PASSWORD "my_password"
+#define AP_PASSWORD "A3AA04ECvsJn64JH" // A3AA04ECvsJn64JH
 #endif
 
 #define WIFI_NETWORK_LABEL "my_wifi"
